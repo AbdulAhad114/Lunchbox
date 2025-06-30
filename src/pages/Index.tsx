@@ -1,4 +1,5 @@
 
+import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import WhatWeDoSection from "@/components/WhatWeDoSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
@@ -9,6 +10,7 @@ import StickyCallButton from "@/components/StickyCallButton";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Navigation />
       <HeroSection />
       <WhatWeDoSection />
       <WhyChooseUsSection />

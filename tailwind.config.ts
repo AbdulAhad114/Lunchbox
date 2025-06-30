@@ -53,9 +53,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Lunchbox Brand Colors
-				electric: '#F7E400',
-				boldblue: '#0049B7',
+				// Updated Lunchbox Brand Colors
+				'primary-blue': '#0035AC',
+				'brand-yellow': '#FFFF00',
+				'soft-bg': '#F5F5F5',
+				'dark-navy': '#02102F',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

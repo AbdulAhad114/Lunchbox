@@ -3,20 +3,20 @@ import { Instagram, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-dark-navy text-white py-12" id="contact">
       <div className="container mx-auto px-6">
         <div className="text-center">
-          <h3 className="text-3xl font-fredoka text-electric mb-4">
+          <h3 className="text-3xl font-fredoka text-brand-yellow mb-4">
             Lunchbox
           </h3>
           <p className="font-poppins text-gray-300 mb-8 max-w-2xl mx-auto">
-            Digital Marketing for Restaurants | Based in Canada | Serving Restaurants Across North America
+            Digital Marketing for Restaurants | Based in Canada | Serving Restaurants Across the US & Canada
           </p>
           
           <div className="flex justify-center items-center space-x-8 mb-8">
             <a
               href="mailto:hello@lunchboxdigital.ca"
-              className="flex items-center space-x-2 text-gray-300 hover:text-electric transition-colors duration-300 font-poppins"
+              className="flex items-center space-x-2 text-gray-300 hover:text-brand-yellow transition-colors duration-300 font-poppins"
             >
               <Mail size={20} />
               <span>hello@lunchboxdigital.ca</span>
@@ -25,7 +25,7 @@ const Footer = () => {
               href="https://instagram.com/lunchboxdigital"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 text-gray-300 hover:text-electric transition-colors duration-300 font-poppins"
+              className="flex items-center space-x-2 text-gray-300 hover:text-brand-yellow transition-colors duration-300 font-poppins"
             >
               <Instagram size={20} />
               <span>@lunchboxdigital</span>

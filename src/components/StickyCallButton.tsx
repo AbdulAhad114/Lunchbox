@@ -29,7 +29,7 @@ const StickyCallButton = () => {
     <div className="fixed bottom-6 right-6 z-50 md:hidden">
       <Button
         onClick={scrollToBooking}
-        className="bg-electric hover:bg-electric/90 text-black font-bold px-4 py-4 rounded-full shadow-electric hover:shadow-xl transition-all duration-300 animate-bounce-gentle"
+        className="bg-brand-yellow hover:bg-brand-yellow/90 text-primary-blue font-bold px-4 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 animate-bounce-gentle"
       >
         <Phone size={20} className="mr-2" />
         Book Call

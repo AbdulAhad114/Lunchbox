@@ -93,22 +93,22 @@ All colors MUST be HSL.
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #F7E400 0%, #0049B7 100%);
+    background: linear-gradient(135deg, #FFFF00 0%, #0035AC 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
   .bg-gradient-lunchbox {
-    background: linear-gradient(135deg, #F7E400 0%, #0049B7 100%);
+    background: linear-gradient(135deg, #FFFF00 0%, #0035AC 100%);
   }
   
-  .shadow-electric {
-    box-shadow: 0 4px 20px rgba(247, 228, 0, 0.3);
+  .shadow-brand-yellow {
+    box-shadow: 0 4px 20px rgba(255, 255, 0, 0.3);
   }
   
   .shadow-blue {
-    box-shadow: 0 4px 20px rgba(0, 73, 183, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 53, 172, 0.2);
   }
 }
 
@@ -127,10 +127,10 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #F7E400;
+  background: #FFFF00;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0049B7;
+  background: #0035AC;
 }

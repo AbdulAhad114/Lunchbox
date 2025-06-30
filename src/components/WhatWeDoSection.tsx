@@ -26,12 +26,12 @@ const WhatWeDoSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-fredoka text-gray-800 mb-6">
-            You Handle the <span className="text-electric">Stoves.</span>
+            You Handle the <span className="text-brand-yellow">Stoves.</span>
             <br />
-            We'll Handle the <span className="text-boldblue">Screens.</span>
+            We'll Handle the <span className="text-primary-blue">Screens.</span>
           </h2>
           
-          <div className="bg-gradient-to-r from-electric to-boldblue p-8 rounded-3xl shadow-xl inline-block mb-8">
+          <div className="bg-gradient-to-r from-primary-blue to-brand-yellow p-8 rounded-3xl shadow-xl inline-block mb-8">
             <p className="text-3xl md:text-4xl font-baloo font-bold text-white">
               $499/month
             </p>
@@ -48,11 +48,11 @@ const WhatWeDoSection = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-blue transition-all duration-300 border-2 hover:border-electric/30 bg-white"
+              className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-brand-yellow/30 bg-white hover:-translate-y-2"
             >
               <CardContent className="p-8 text-center">
-                <div className="bg-gradient-to-br from-electric/20 to-boldblue/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon size={36} className="text-boldblue" />
+                <div className="bg-gradient-to-br from-brand-yellow/20 to-primary-blue/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <service.icon size={36} className="text-primary-blue" />
                 </div>
                 <h3 className="text-xl font-baloo font-semibold text-gray-800 mb-4">
                   {service.title}
@@ -68,7 +68,7 @@ const WhatWeDoSection = () => {
         <div className="text-center mt-12">
           <p className="text-lg font-baloo text-gray-600 max-w-2xl mx-auto">
             While you're perfecting recipes, we're perfecting your online presence. 
-            <span className="text-boldblue font-semibold"> Simple, effective, and designed just for restaurants.</span>
+            <span className="text-primary-blue font-semibold"> Simple, effective, and designed just for restaurants.</span>
           </p>
         </div>
       </div>
