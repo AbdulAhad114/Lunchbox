@@ -45,32 +45,32 @@ const BookingForm = () => {
   };
 
   return (
-    <section className="py-20 bg-brand-yellow/10" id="booking">
+    <section className="py-24 bg-soft-bg" id="booking">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-fredoka text-gray-800 mb-6">
-            Let's Talk <span className="text-primary-blue">Restaurant Growth</span>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-fredoka text-gray-900 mb-6 leading-tight">
+            Let's Talk <span className="bg-gradient-to-r from-primary-blue to-brand-yellow bg-clip-text text-transparent">Restaurant Growth</span>
           </h2>
-          <p className="text-xl font-poppins text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl font-poppins text-gray-600 max-w-3xl mx-auto font-light">
             Ready to transform your digital presence? Book a free consultation and let's discuss how we can help your restaurant shine online.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Card className="shadow-2xl border-0 bg-white">
-            <CardHeader className="bg-gradient-to-r from-primary-blue to-brand-yellow text-white text-center py-8 rounded-t-lg">
-              <CardTitle className="text-2xl font-baloo">
+          <Card className="shadow-2xl border-0 bg-white overflow-hidden">
+            <CardHeader className="bg-gradient-to-r from-primary-blue to-brand-yellow text-white text-center py-12">
+              <CardTitle className="text-3xl font-fredoka mb-4">
                 Book Your Free Strategy Call
               </CardTitle>
-              <p className="font-poppins opacity-90">
+              <p className="font-poppins text-white/90 text-lg">
                 No sales pitch, just valuable insights for your restaurant
               </p>
             </CardHeader>
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="font-poppins font-medium text-gray-700">
+            <CardContent className="p-12">
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-3">
+                    <Label htmlFor="name" className="font-poppins font-medium text-gray-700 text-lg">
                       Your Name *
                     </Label>
                     <Input
@@ -80,12 +80,12 @@ const BookingForm = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="border-2 border-gray-200 focus:border-brand-yellow rounded-xl py-3 font-poppins"
+                      className="border-2 border-gray-200 focus:border-primary-blue rounded-xl py-4 text-lg font-poppins"
                       placeholder="Enter your name"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="restaurantName" className="font-poppins font-medium text-gray-700">
+                  <div className="space-y-3">
+                    <Label htmlFor="restaurantName" className="font-poppins font-medium text-gray-700 text-lg">
                       Restaurant Name *
                     </Label>
                     <Input
@@ -95,16 +95,16 @@ const BookingForm = () => {
                       required
                       value={formData.restaurantName}
                       onChange={handleChange}
-                      className="border-2 border-gray-200 focus:border-brand-yellow rounded-xl py-3 font-poppins"
+                      className="border-2 border-gray-200 focus:border-primary-blue rounded-xl py-4 text-lg font-poppins"
                       placeholder="Your restaurant's name"
                     />
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="city" className="font-poppins font-medium text-gray-700 flex items-center">
-                      <MapPin size={16} className="mr-1 text-primary-blue" />
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-3">
+                    <Label htmlFor="city" className="font-poppins font-medium text-gray-700 text-lg flex items-center">
+                      <MapPin size={20} className="mr-2 text-primary-blue" />
                       City *
                     </Label>
                     <Input
@@ -114,13 +114,13 @@ const BookingForm = () => {
                       required
                       value={formData.city}
                       onChange={handleChange}
-                      className="border-2 border-gray-200 focus:border-brand-yellow rounded-xl py-3 font-poppins"
+                      className="border-2 border-gray-200 focus:border-primary-blue rounded-xl py-4 text-lg font-poppins"
                       placeholder="Where are you located?"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="font-poppins font-medium text-gray-700 flex items-center">
-                      <Mail size={16} className="mr-1 text-primary-blue" />
+                  <div className="space-y-3">
+                    <Label htmlFor="email" className="font-poppins font-medium text-gray-700 text-lg flex items-center">
+                      <Mail size={20} className="mr-2 text-primary-blue" />
                       Email *
                     </Label>
                     <Input
@@ -130,15 +130,15 @@ const BookingForm = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="border-2 border-gray-200 focus:border-brand-yellow rounded-xl py-3 font-poppins"
+                      className="border-2 border-gray-200 focus:border-primary-blue rounded-xl py-4 text-lg font-poppins"
                       placeholder="your@email.com"
                     />
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="phone" className="font-poppins font-medium text-gray-700 flex items-center">
-                    <Phone size={16} className="mr-1 text-primary-blue" />
+                <div className="space-y-3">
+                  <Label htmlFor="phone" className="font-poppins font-medium text-gray-700 text-lg flex items-center">
+                    <Phone size={20} className="mr-2 text-primary-blue" />
                     Phone (Optional)
                   </Label>
                   <Input
@@ -147,14 +147,14 @@ const BookingForm = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="border-2 border-gray-200 focus:border-brand-yellow rounded-xl py-3 font-poppins"
+                    className="border-2 border-gray-200 focus:border-primary-blue rounded-xl py-4 text-lg font-poppins"
                     placeholder="Your phone number"
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="message" className="font-poppins font-medium text-gray-700 flex items-center">
-                    <MessageCircle size={16} className="mr-1 text-primary-blue" />
+                <div className="space-y-3">
+                  <Label htmlFor="message" className="font-poppins font-medium text-gray-700 text-lg flex items-center">
+                    <MessageCircle size={20} className="mr-2 text-primary-blue" />
                     What do you need help with?
                   </Label>
                   <Textarea
@@ -162,19 +162,19 @@ const BookingForm = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className="border-2 border-gray-200 focus:border-brand-yellow rounded-xl font-poppins min-h-[120px]"
+                    className="border-2 border-gray-200 focus:border-primary-blue rounded-xl font-poppins text-lg min-h-[140px]"
                     placeholder="Tell us about your restaurant and what challenges you're facing online..."
                   />
                 </div>
 
                 <Button
                   type="submit"
-                  className="w-full bg-brand-yellow hover:bg-brand-yellow/90 text-primary-blue font-bold text-lg py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-baloo"
+                  className="w-full bg-gradient-to-r from-primary-blue to-brand-yellow hover:from-primary-blue/90 hover:to-brand-yellow/90 text-white font-bold text-xl py-8 rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 font-baloo"
                 >
                   Book My Free Call 🚀
                 </Button>
 
-                <p className="text-center text-sm text-gray-500 font-poppins">
+                <p className="text-center text-gray-500 font-poppins">
                   We typically respond within 2 hours during business hours
                 </p>
               </form>
