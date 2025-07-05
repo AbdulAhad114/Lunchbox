@@ -17,11 +17,8 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#home" },
     { name: "Services", href: "#services" },
     { name: "Why Lunchbox", href: "#why-lunchbox" },
-    { name: "Booking", href: "#booking" },
-    { name: "Contact", href: "#contact" },
   ];
 
   const scrollToSection = (href: string) => {
