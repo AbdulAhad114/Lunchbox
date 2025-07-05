@@ -112,8 +112,14 @@ All colors MUST be HSL.
   }
 }
 
-/* Smooth scrolling */
+/* Enhanced smooth scrolling */
 html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Smooth scroll for all elements */
+* {
   scroll-behavior: smooth;
 }
 

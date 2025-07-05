@@ -1,7 +1,15 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const TestimonialSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section 
+      ref={ref}
+      className={`py-16 bg-white relative overflow-hidden transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       {/* Subtle brand pattern elements */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-primary-blue/3 to-brand-yellow/3 rounded-full blur-2xl"></div>
       <div className="absolute bottom-10 right-10 w-40 h-40 bg-gradient-to-tl from-brand-yellow/4 to-primary-blue/4 rounded-full blur-3xl"></div>
