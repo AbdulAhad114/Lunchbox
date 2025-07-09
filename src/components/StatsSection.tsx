@@ -39,7 +39,7 @@ export default function StatsSection() {
         <span>BY THE NUMBERS</span>
       </div>
 
-      <div className="grid grid-cols-2 grid-rows-2 w-full h-full border-2 border-black rounded-xl bg-white bg-opacity-80 overflow-hidden">
+      <div className="grid grid-cols-2 grid-rows-2 w-full h-full border-2 border-black rounded-xl bg-white bg-opacity-60 overflow-hidden">
         {/* Top Left */}
         <div className="flex flex-col justify-top items-start border-b-2 border-r-2 border-black p-8">
           <div className="text-4xl font-bold">350+</div>

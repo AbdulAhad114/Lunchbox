@@ -95,13 +95,16 @@ export default function WhyChooseUsSection() {
       <div className="container mx-auto px-6 relative z-10 max-w-5xl">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-fredoka text-gray-900 mb-6 leading-tight">
+          <h2 className="text-6xl md:text-6xl font-apfel font-bold text-gray-900 mb-4 leading-tight">
+            What's in the Box? </h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 
+          leading-tight bg-gradient-to-r from-primary-blue to-brand-yellow bg-clip-text text-transparent">
             We Handle the Online.{" "}
-            <span className="bg-gradient-to-r from-primary-blue to-brand-yellow bg-clip-text text-transparent">
+            <span>
               You Handle the Kitchen.
             </span>
           </h2>
-          <p className="text-xl font-poppins text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             We don't just "help" — we handle it. You'll never need to worry about
             posting again. Your Google reviews? Managed. Your website? Built to
             bring in orders. Your brand? Active, polished, and visible — every

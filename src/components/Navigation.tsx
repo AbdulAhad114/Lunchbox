@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import logo from "@/../public/images/lunchbox-logo.png"; // Adjust the path as necessary
+import { useNavigate, useLocation } from "react-router-dom";
+import logo from "@/../public/images/lunchbox-logo.png"; // Adjust path as needed
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Detect if current page is homepage
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,66 +27,73 @@ const Navigation = () => {
     { name: "LET'S TALK", href: "/lets-talk", type: "route" },
   ];
 
-
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMobileMenuOpen(false);
   };
 
   return (
-    <nav className={`fixed top-6 left-12 right-12 z-50 rounded-lg transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-    } ${isMobileMenuOpen ? 'bg-white shadow-lg' : ''}`}> 
+    <nav
+      className={`fixed top-6 left-4 right-4 z-50 rounded-lg transition-all duration-300 ${
+        isScrolled || isMobileMenuOpen
+          ? "bg-white/95 backdrop-blur-sm shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          
-          <div className="flex items-center">
+          <div
+            className="flex items-center cursor-pointer"
+            onClick={() => {
+              navigate("/");
+              setIsMobileMenuOpen(false);
+            }}
+            aria-label="Go to homepage"
+          >
             <img
               src={logo}
               alt="Lunchbox Logo"
-              className="h-16 w-auto"
+              className={`h-16 w-auto`}
             />
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => {
-                    if (item.type === "scroll") {
-                      scrollToSection(item.href);
-                    } else if (item.type === "route") {
-                      navigate(item.href);
-                      setIsMobileMenuOpen(false);
-                    }
-                  }}
-                  // className="text-white hover:text-primary-blue font-poppins font-medium transition-colors duration-300"
-                  className={`font-medium transition-colors duration-300
-                            ${isScrolled ? "text-black" : "text-white"}
-                            hover:text-primary-blue`}
-                >
-                  {item.name}
-                </button>
-              ))}
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault(); // prevent full page reload
+                  if (item.type === "scroll") {
+                    scrollToSection(item.href);
+                  } else if (item.type === "route") {
+                    navigate(item.href);
+                    setIsMobileMenuOpen(false);
+                  }
+                }}
+                className={`font-medium transition-colors duration-300 ${
+                  isHomePage && !isScrolled ? "text-white" : "text-black"
+                } hover:text-primary-blue`}
+              >
+                {item.name}
+              </a>
+            ))}
 
-            {/* <Button
-              onClick={() => scrollToSection('#booking')}
-              className="bg-brand-yellow hover:bg-brand-yellow/90 text-primary-blue font-bold px-6 py-2 rounded-full transition-all duration-300"
-            >
-              Book Free Call
-            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-700 hover:text-primary-blue transition-colors duration-300"
+              className={`transition-colors duration-300 ${
+                isHomePage && !isScrolled ? "text-white" : "text-gray-700"
+              }`}
+              aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -110,13 +120,6 @@ const Navigation = () => {
                   {item.name}
                 </button>
               ))}
-
-              {/* <Button
-                onClick={() => scrollToSection('#booking')}
-                className="bg-brand-yellow hover:bg-brand-yellow/90 text-primary-blue font-bold px-6 py-2 rounded-full transition-all duration-300 w-full"
-              >
-                Book Free Call
-              </Button> */}
             </div>
           </div>
         )}

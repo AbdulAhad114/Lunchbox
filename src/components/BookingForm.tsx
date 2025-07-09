@@ -44,8 +44,9 @@ const BookingForm = () => {
   };
 
   return (
-    <section className="bg-soft-bg" id="booking">
+    <section className="bg-white" id="booking">
       <Navigation />
+
       <div className="container mx-auto px-6 py-40">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-fredoka text-gray-900 mb-2 leading-tight">

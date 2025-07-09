@@ -36,7 +36,7 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-6 pt-10 text-center relative z-10">
         <div className="max-w-5xl mx-auto animate-fade-in-up">
-          <h1 className="text-4xl md:text-6xl font-apfel font-bold text-white mb-6 
+          <h1 className="text-4xl md:text-6xl font-apfel font-bold text-white mb-4 
           leading-snug tracking-tight">
             More Online Presence → More Customers → More Reviews → More Revenue
           </h1>

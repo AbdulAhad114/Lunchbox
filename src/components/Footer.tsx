@@ -11,15 +11,15 @@ export default function Footer() {
             <div className="text-[14px] lg:pl-20 leading-none pr-2 font-light flex flex-wrap md:flex-nowrap md:max-w-[302px] items-end gap-3">
               {[
                 {
-                  href: "https://dribbble.com/alphasquadstudio",
-                  label: "DRIBBBLE",
-                },
-                {
-                  href: "https://www.linkedin.com/company/alphasquad-tech/",
+                  href: "https://www.linkedin.com/company/lunchboxdigital/about/?viewAsMember=true",
                   label: "LINKEDIN",
                 },
                 {
-                  href: "https://www.instagram.com/alphasquadtech/",
+                  href: "https://www.facebook.com/share/1DMabhZrma/",
+                  label: "FACEBOOK",
+                },
+                {
+                  href: "https://www.instagram.com/lunchb0x.ca?igsh=NXMwbWNpOGd1Z3Bs",
                   label: "INSTAGRAM",
                 },
               ].map(({ href, label }) => (
@@ -34,7 +34,7 @@ export default function Footer() {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <circle cx="4" cy="4" r="4" fill="white" />
+                    <circle cx="4" cy="4" r="4" fill="black" />
                   </svg>
                   <a
                     href={href}
@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
 
           {/* Right section: Addresses */}
-          <div className="w-full flex flex-col md:flex-row divide-y divide-black-700 md:divide-y-0">
+          {/* <div className="w-full flex flex-col md:flex-row divide-y divide-black-700 md:divide-y-0">
             {[
               "4275 Executive Square, Suite 200, LA Jolla, CA 92037, USA",
               "76/F, The Center, 99 Queens Road, Central, Hong Kong SAR",
@@ -64,7 +64,7 @@ export default function Footer() {
                 {address}
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom bar */}
@@ -72,19 +72,19 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center text-center md:text-left gap-4 md:gap-8 mb-4 md:mb-0">
             <a
               href="/privacy-policy"
-              className="text-black-400 font-light text-sm md:text-base leading-[130%] hover:text-white"
+              className="text-black-400 font-light text-sm md:text-base leading-[130%]"
             >
               Privacy Policy
             </a>
             <a
               href="mailto:howdy@alphasquad.tech"
-              className="text-black-400 font-light text-sm md:text-base leading-[130%] hover:text-white"
+              className="text-black-400 font-light text-sm md:text-base leading-[130%]"
             >
-              Contact Us: <span className="text-black">howdy@alphasquad.tech</span>
+              Contact Us: <span className="text-black"></span>
             </a>
           </div>
           <p className="text-black-400 pt-8 md:pt-0 font-light text-xs md:text-base leading-[130%] text-center md:text-right">
-            © ALPHASQUAD LLC 2025 ALL RIGHTS RESERVED
+            © LUNCHBOX 2025 ALL RIGHTS RESERVED
           </p>
         </div>
       </div>

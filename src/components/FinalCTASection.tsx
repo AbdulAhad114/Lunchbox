@@ -10,11 +10,11 @@ const FinalCTASection = () => {
   return (
     <section className="py-24 bg-gradient-to-r from-primary-blue to-brand-yellow relative overflow-hidden">
       <div className="container mx-auto px-6 text-center relative z-10">
-        <h2 className="text-4xl md:text-6xl font-fredoka text-white mb-8 leading-tight">
+        <h2 className="text-6xl md:text-6xl font-apfel font-bold text-white mb-4 leading-tight">
           Ready to Grow Your Restaurant Online?
         </h2>
         
-        <p className="text-xl font-poppins text-white/90 mb-12 max-w-2xl mx-auto">
+        <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
           Join hundreds of successful restaurants who trust Lunchbox to handle their digital presence.
         </p>
         

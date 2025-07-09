@@ -26,7 +26,7 @@ const Index = () => {
       {/* <BookingForm /> */}
       <FinalCTASection />
       <Footer />
-      <StickyCallButton />
+      {/* <StickyCallButton /> */}
     </div>
   );
 };
