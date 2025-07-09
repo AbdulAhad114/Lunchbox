@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Instagram, MessageSquare, Star, TrendingUp } from "lucide-react";
+import SplashCursor from "@/components/SplashCursor";
 
 const PricingAndValue = () => {
   const services = [
@@ -26,6 +27,7 @@ const PricingAndValue = () => {
   return (
     <section className="bg-white" id="services">
         <Navigation />
+        <SplashCursor />
       <div className="pt-44 pb-12 container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-apfel font-bold text-black mb-6">
