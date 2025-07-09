@@ -14,7 +14,7 @@ const TrustBarSection = () => {
   return (
     <section 
       ref={ref}
-      className={`py-12 bg-white border-t border-gray-100 relative overflow-hidden transition-all duration-1000 ${
+      className={`py-12 bg-white border-b border-gray-300 relative overflow-hidden transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
     >

@@ -1,11 +1,10 @@
 
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
-import TestimonialSection from "@/components/TestimonialSection";
+// import TestimonialSection from "@/components/TestimonialSection";
 import TrustBarSection from "@/components/TrustBarSection";
-import WhatWeDoSection from "@/components/WhatWeDoSection";
-import WhatWeDontDoSection from "@/components/WhatWeDontDoSection";
-import PhilosophySection from "@/components/PhilosophySection";
+// import WhatWeDoSection from "@/components/WhatWeDoSection";
+// import PhilosophySection from "@/components/PhilosophySection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import StatsSection from "@/components/StatsSection";
 import BookingForm from "@/components/BookingForm";
@@ -18,14 +17,13 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
       <HeroSection />
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
       <TrustBarSection />
-      <WhatWeDoSection />
-      <WhatWeDontDoSection />
-      <PhilosophySection />
+      {/* <WhatWeDoSection />
+      <PhilosophySection /> */}
       <WhyChooseUsSection />
       <StatsSection />
-      <BookingForm />
+      {/* <BookingForm /> */}
       <FinalCTASection />
       <Footer />
       <StickyCallButton />

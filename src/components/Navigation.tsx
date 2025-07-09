@@ -1,11 +1,13 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import logo from "@/../public/images/lunchbox-logo.png"; // Adjust the path as necessary
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,9 +19,11 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: "Services", href: "#services" },
-    { name: "Why Lunchbox", href: "#why-lunchbox" },
+    { name: "THE LUNCHBOX WAY", href: "/the-lunchbox-way", type: "route" },
+    { name: "PRICING & VALUE", href: "/pricing-and-value", type: "route" },
+    { name: "LET'S TALK", href: "/lets-talk", type: "route" },
   ];
+
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -30,35 +34,49 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav className={`fixed top-6 left-12 right-12 z-50 rounded-lg transition-all duration-300 ${
       isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-    }`}>
-      <div className="container mx-auto px-6 py-4">
+    } ${isMobileMenuOpen ? 'bg-white shadow-lg' : ''}`}> 
+      <div className="container mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}
+          
           <div className="flex items-center">
-            <h1 className="text-2xl font-fredoka font-bold text-primary-blue">
-              Lunchbox
-            </h1>
+            <img
+              src={logo}
+              alt="Lunchbox Logo"
+              className="h-16 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 hover:text-primary-blue font-poppins font-medium transition-colors duration-300"
-              >
-                {item.name}
-              </button>
-            ))}
-            <Button
+                <button
+                  key={item.name}
+                  onClick={() => {
+                    if (item.type === "scroll") {
+                      scrollToSection(item.href);
+                    } else if (item.type === "route") {
+                      navigate(item.href);
+                      setIsMobileMenuOpen(false);
+                    }
+                  }}
+                  // className="text-white hover:text-primary-blue font-poppins font-medium transition-colors duration-300"
+                  className={`font-medium transition-colors duration-300
+                            ${isScrolled ? "text-black" : "text-white"}
+                            hover:text-primary-blue`}
+                >
+                  {item.name}
+                </button>
+              ))}
+
+            {/* <Button
               onClick={() => scrollToSection('#booking')}
               className="bg-brand-yellow hover:bg-brand-yellow/90 text-primary-blue font-bold px-6 py-2 rounded-full transition-all duration-300"
             >
               Book Free Call
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -79,18 +97,26 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-left text-gray-700 hover:text-primary-blue font-poppins font-medium transition-colors duration-300"
+                  onClick={() => {
+                    if (item.type === "scroll") {
+                      scrollToSection(item.href);
+                    } else if (item.type === "route") {
+                      navigate(item.href);
+                      setIsMobileMenuOpen(false);
+                    }
+                  }}
+                  className="text-gray-700 hover:text-primary-blue font-poppins font-medium transition-colors duration-300"
                 >
                   {item.name}
                 </button>
               ))}
-              <Button
+
+              {/* <Button
                 onClick={() => scrollToSection('#booking')}
                 className="bg-brand-yellow hover:bg-brand-yellow/90 text-primary-blue font-bold px-6 py-2 rounded-full transition-all duration-300 w-full"
               >
                 Book Free Call
-              </Button>
+              </Button> */}
             </div>
           </div>
         )}

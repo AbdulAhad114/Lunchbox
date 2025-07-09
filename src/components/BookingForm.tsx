@@ -1,3 +1,5 @@
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -13,7 +15,6 @@ const BookingForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     restaurantName: '',
-    city: '',
     email: '',
     phone: '',
     message: ''
@@ -23,14 +24,12 @@ const BookingForm = () => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     toast({
-      title: "Thank you for your interest!",
-      description: "We'll be in touch within 24 hours to schedule your free consultation.",
+      title: "You’re in. We’ll reach out shortly",
     });
     // Reset form
     setFormData({
       name: '',
       restaurantName: '',
-      city: '',
       email: '',
       phone: '',
       message: ''
@@ -45,14 +44,17 @@ const BookingForm = () => {
   };
 
   return (
-    <section className="py-24 bg-soft-bg" id="booking">
-      <div className="container mx-auto px-6">
+    <section className="bg-soft-bg" id="booking">
+      <Navigation />
+      <div className="container mx-auto px-6 py-40">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-fredoka text-gray-900 mb-6 leading-tight">
-            Let's Talk <span className="bg-gradient-to-r from-primary-blue to-brand-yellow bg-clip-text text-transparent">Restaurant Growth</span>
+          <h2 className="text-4xl md:text-6xl font-fredoka text-gray-900 mb-2 leading-tight">
+            Let's Get You <span className="bg-gradient-to-r from-primary-blue to-brand-yellow 
+            bg-clip-text text-transparent">More Orders</span>
           </h2>
           <p className="text-xl font-poppins text-gray-600 max-w-3xl mx-auto font-light">
-            Ready to transform your digital presence? Book a free consultation and let's discuss how we can help your restaurant shine online.
+            This isn’t a sales call. It’s a growth session. Tell us what you’re 
+            struggling with — and we’ll show you how Lunchbox can take it off your plate.
           </p>
         </div>
 
@@ -71,7 +73,7 @@ const BookingForm = () => {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-3">
                     <Label htmlFor="name" className="font-poppins font-medium text-gray-700 text-lg">
-                      Your Name *
+                      First Name *
                     </Label>
                     <Input
                       id="name"
@@ -102,7 +104,7 @@ const BookingForm = () => {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-3">
+                  {/* <div className="space-y-3">
                     <Label htmlFor="city" className="font-poppins font-medium text-gray-700 text-lg flex items-center">
                       <MapPin size={20} className="mr-2 text-primary-blue" />
                       City *
@@ -117,7 +119,7 @@ const BookingForm = () => {
                       className="border-2 border-gray-200 focus:border-primary-blue rounded-xl py-4 text-lg font-poppins"
                       placeholder="Where are you located?"
                     />
-                  </div>
+                  </div> */}
                   <div className="space-y-3">
                     <Label htmlFor="email" className="font-poppins font-medium text-gray-700 text-lg flex items-center">
                       <Mail size={20} className="mr-2 text-primary-blue" />
@@ -134,28 +136,29 @@ const BookingForm = () => {
                       placeholder="your@email.com"
                     />
                   </div>
-                </div>
 
-                <div className="space-y-3">
-                  <Label htmlFor="phone" className="font-poppins font-medium text-gray-700 text-lg flex items-center">
-                    <Phone size={20} className="mr-2 text-primary-blue" />
-                    Phone (Optional)
-                  </Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="border-2 border-gray-200 focus:border-primary-blue rounded-xl py-4 text-lg font-poppins"
-                    placeholder="Your phone number"
-                  />
+                  <div className="space-y-3">
+                    <Label htmlFor="phone" className="font-poppins font-medium text-gray-700 text-lg flex items-center">
+                      <Phone size={20} className="mr-2 text-primary-blue" />
+                      Phone
+                    </Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="border-2 border-gray-200 focus:border-primary-blue rounded-xl py-4 text-lg font-poppins"
+                      placeholder="Your phone number"
+                    />
+                  </div>
+
                 </div>
 
                 <div className="space-y-3">
                   <Label htmlFor="message" className="font-poppins font-medium text-gray-700 text-lg flex items-center">
                     <MessageCircle size={20} className="mr-2 text-primary-blue" />
-                    What do you need help with?
+                    What’s your biggest digital challenge?” 
                   </Label>
                   <Textarea
                     id="message"
@@ -182,6 +185,7 @@ const BookingForm = () => {
           </Card>
         </div>
       </div>
+      <Footer />
     </section>
   );
 };

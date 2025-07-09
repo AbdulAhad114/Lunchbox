@@ -1,95 +1,68 @@
-import { useEffect, useState } from "react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import React, { useRef, useEffect } from "react";
+import SplashCursor from "./SplashCursor";
 
-const StatsSection = () => {
-  const { ref, isVisible } = useScrollAnimation();
-  const [counts, setCounts] = useState({ restaurants: 0, posts: 0, reviews: 0, engagement: 0 });
+export default function StatsSection() {
+  
+  const sectionRef = useRef<HTMLDivElement>(null);
 
-  const finalCounts = {
-    restaurants: 150,
-    posts: 2400,
-    reviews: 850,
-    engagement: 87
-  };
+  // Only show SplashCursor when mouse is inside the section
+  const [showCursor, setShowCursor] = React.useState(false);
 
   useEffect(() => {
-    if (!isVisible) return;
+    const section = sectionRef.current;
+    if (!section) return;
 
-    const duration = 2000;
-    const steps = 60;
-    const stepDuration = duration / steps;
+    const handleEnter = () => setShowCursor(true);
+    const handleLeave = () => setShowCursor(false);
 
-    let currentStep = 0;
-    const timer = setInterval(() => {
-      currentStep++;
-      const progress = currentStep / steps;
-      
-      setCounts({
-        restaurants: Math.floor(finalCounts.restaurants * progress),
-        posts: Math.floor(finalCounts.posts * progress),
-        reviews: Math.floor(finalCounts.reviews * progress),
-        engagement: Math.floor(finalCounts.engagement * progress)
-      });
+    section.addEventListener("mouseenter", handleEnter);
+    section.addEventListener("mouseleave", handleLeave);
 
-      if (currentStep >= steps) {
-        clearInterval(timer);
-        setCounts(finalCounts);
-      }
-    }, stepDuration);
-
-    return () => clearInterval(timer);
-  }, [isVisible]);
-
+    return () => {
+      section.removeEventListener("mouseenter", handleEnter);
+      section.removeEventListener("mouseleave", handleLeave);
+    };
+  }, []);
+  
   return (
-    <section 
-      ref={ref}
-      className={`py-20 bg-gradient-to-br from-primary-blue to-dark-navy text-white relative overflow-hidden transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
-    >
-      {/* Subtle brand elements */}
-      <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-brand-yellow/5 to-primary-blue/5 rounded-full blur-2xl"></div>
-      <div className="absolute bottom-20 left-10 w-24 h-24 bg-gradient-to-tr from-primary-blue/5 to-brand-yellow/5 rounded-full blur-xl"></div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-fredoka text-white mb-6 leading-tight">
-            Growing Restaurants <span className="text-brand-yellow">By the Numbers</span>
-          </h2>
+    <section ref={sectionRef} className="relative w-full h-screen bg-white overflow-hidden px-2">
+      {/* Splash Cursor Background */}
+      {showCursor && <SplashCursor />}
+
+      {/* Center box without animated border */}
+      <div
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+          w-52 h-20 flex justify-center items-center cursor-pointer
+          bg-white text-black text-xl font-apfel font-bold uppercase tracking-wide
+          border-2 border-black rounded-xl shadow-lg z-20"
+      >
+        <span>BY THE NUMBERS</span>
+      </div>
+
+      <div className="grid grid-cols-2 grid-rows-2 w-full h-full border-2 border-black rounded-xl bg-white bg-opacity-80 overflow-hidden">
+        {/* Top Left */}
+        <div className="flex flex-col justify-top items-start border-b-2 border-r-2 border-black p-8">
+          <div className="text-4xl font-bold">350+</div>
+          <div className="font-semibold text-lg">Partners</div>
         </div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-          <div className="text-center group">
-            <div className="text-5xl md:text-7xl font-fredoka text-brand-yellow mb-4 group-hover:scale-110 transition-transform duration-300">
-              {counts.restaurants}+
-            </div>
-            <div className="text-lg font-baloo text-white/90">Partner Restaurants</div>
-          </div>
-          
-          <div className="text-center group">
-            <div className="text-5xl md:text-7xl font-fredoka text-brand-yellow mb-4 group-hover:scale-110 transition-transform duration-300">
-              {counts.posts.toLocaleString()}+
-            </div>
-            <div className="text-lg font-baloo text-white/90">Social Posts Managed</div>
-          </div>
-          
-          <div className="text-center group">
-            <div className="text-5xl md:text-7xl font-fredoka text-brand-yellow mb-4 group-hover:scale-110 transition-transform duration-300">
-              {counts.reviews}+
-            </div>
-            <div className="text-lg font-baloo text-white/90">Reviews Handled</div>
-          </div>
-          
-          <div className="text-center group">
-            <div className="text-5xl md:text-7xl font-fredoka text-brand-yellow mb-4 group-hover:scale-110 transition-transform duration-300">
-              {counts.engagement}%
-            </div>
-            <div className="text-lg font-baloo text-white/90">Avg. Engagement Boost</div>
-          </div>
+        {/* Top Right */}
+        <div className="flex flex-col justify-top items-end border-b-2 border-black p-8">
+          <div className="text-4xl font-bold">900,000+</div>
+          <div className="font-semibold text-lg">People impacted</div>
+        </div>
+        {/* Bottom Left */}
+        <div className="flex flex-col justify-end items-start border-r-2 border-black p-8">
+          <div className="text-4xl font-bold">90%</div>
+          <div className="font-semibold text-lg">Partner Retention</div>
+        </div>
+        {/* Bottom Right */}
+        <div className="flex flex-col justify-end items-end p-8">
+          <div className="text-4xl font-bold">19,000+</div>
+          <div className="font-semibold text-lg">Hours in the business</div>
         </div>
       </div>
+
+      
     </section>
   );
-};
-
-export default StatsSection;
+}

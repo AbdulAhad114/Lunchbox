@@ -80,6 +80,25 @@ All colors MUST be HSL.
   }
 }
 
+@font-face {
+  font-family: 'Apfel Grotezk';
+  src: url('/src/assets/fonts/apfel-grotezk/ApfelGrotezk-Regular.woff2') format('woff2'),
+       url('/src/assets/fonts/apfel-grotezk/ApfelGrotezk-Regular.woff') format('woff');
+  font-weight: 400;        /* Normal weight */
+  font-style: normal;      /* Normal style */
+  font-display: swap;      /* Recommended for performance */
+}
+
+@font-face {
+  font-family: 'Apfel Grotezk';
+  src: url('/src/assets/fonts/apfel-grotezk/ApfelGrotezk-Satt.woff2') format('woff2'),
+       url('/src/assets/fonts/apfel-grotezk/ApfelGrotezk-Satt.woff') format('woff');
+  font-weight: 700;        /* Bold/thicker weight */
+  font-style: normal;      /* Normal style */
+  font-display: swap;
+}
+
+
 @layer base {
   * {
     @apply border-border;
@@ -87,7 +106,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
   }
 }
 

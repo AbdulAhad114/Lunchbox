@@ -54,8 +54,8 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				// Updated Lunchbox Brand Colors
-				'primary-blue': '#0035AC',
-				'brand-yellow': '#FFFF00',
+				'primary-blue': '#0434AB',
+				'brand-yellow': '#FAFB04',
 				'soft-bg': '#F5F5F5',
 				'dark-navy': '#02102F',
 				sidebar: {
@@ -73,6 +73,8 @@ export default {
 				'fredoka': ['Fredoka One', 'cursive'],
 				'baloo': ['Baloo 2', 'cursive'],
 				'poppins': ['Poppins', 'sans-serif'],
+				'apfel': ['"Apfel Grotezk"', 'sans-serif'],
+				'beVietnam': ['"Be Vietnam Pro"', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
