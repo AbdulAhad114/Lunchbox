@@ -1,20 +1,24 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const FinalCTASection = () => {
   const scrollToBooking = () => {
     document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
   };
-
+  const { ref, isVisible } = useScrollAnimation();
   return (
     <section className="py-24 bg-gradient-to-r from-primary-blue to-brand-yellow relative overflow-hidden">
-      <div className="container mx-auto px-6 text-center relative z-10">
-        <h2 className="text-6xl md:text-6xl font-apfel font-bold text-white mb-4 leading-tight">
+      <div
+        ref={ref}
+        className={`container mx-auto px-6 text-center relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      >
+        <h2 className="text-3xl sm:text-4xl md:text-6xl font-apfel font-bold text-white mb-4 leading-snug sm:leading-tight">
           Ready to Grow Your Restaurant Online?
         </h2>
         
-        <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg md:text-2xl font-beVietnam font-medium text-white/90 mb-2 max-w-3xl text-center mx-auto">
           Join hundreds of successful restaurants who trust Lunchbox to handle their digital presence.
         </p>
         

@@ -1,12 +1,13 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, Utensils, ChefHat, Smartphone } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const HeroSection = () => {
   const scrollToBooking = () => {
     document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
   };
-
+  const { ref, isVisible } = useScrollAnimation();
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-white relative overflow-hidden pt-20">
       
@@ -35,7 +36,10 @@ const HeroSection = () => {
       </div> */}
 
       <div className="container mx-auto px-6 pt-10 text-center relative z-10">
-        <div className="max-w-5xl mx-auto animate-fade-in-up">
+        <div
+          ref={ref}
+          className={`max-w-5xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        >
           <h1 className="text-4xl md:text-6xl font-apfel font-bold text-white mb-4 
           leading-snug tracking-tight">
             More Online Presence → More Customers → More Reviews → More Revenue

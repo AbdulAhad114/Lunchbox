@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Smartphone, Star, Monitor, Bot, Utensils, ChefHat } from "lucide-react";
 import { motion, useAnimation, easeOut } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 // Service data with pattern widths (adjust widths as needed)
 const services = [
@@ -69,10 +70,31 @@ const innerItemVariants = {
 export default function WhyChooseUsSection() {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const [headerAnimationComplete, setHeaderAnimationComplete] = useState(false);
 
   useEffect(() => {
-    if (inView) controls.start("visible");
-  }, [controls, inView]);
+    if (headerVisible && headerAnimationComplete) controls.start("visible");
+  }, [controls, headerVisible, headerAnimationComplete]);
+
+  // Header animation variants
+  const headerContainerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.4,
+        delayChildren: 0.2,
+      },
+    },
+  };
+  const headerItemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.9, ease: easeOut },
+    },
+  };
 
   return (
     <section
@@ -94,23 +116,38 @@ export default function WhyChooseUsSection() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-5xl">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-6xl font-apfel font-bold text-gray-900 mb-4 leading-tight">
-            What's in the Box? </h2>
-          <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-2 
-          leading-tight bg-gradient-to-r from-primary-blue to-brand-yellow bg-clip-text text-transparent">
-            We Handle the Online.{" "}
+        <motion.div
+          ref={headerRef}
+          className={`text-center mb-12 md:mb-16 transition-all duration-1000 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          variants={headerContainerVariants}
+          initial="hidden"
+          animate={headerVisible ? "visible" : "hidden"}
+        >
+          <motion.h2
+            className="text-4xl md:text-6xl font-apfel font-bold text-gray-900 mb-4 leading-snug tracking-tight"
+            variants={headerItemVariants}
+          >
+            What's in the Box? </motion.h2>
+          <motion.h2
+            className="text-lg md:text-2xl font-bold text-gray-900 mb-2 leading-snug bg-gradient-to-r from-primary-blue to-brand-yellow bg-clip-text text-transparent"
+            variants={headerItemVariants}
+          >
+            We Handle the Online.{' '}
             <span>
               You Handle the Kitchen.
             </span>
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+          </motion.h2>
+          <motion.p
+            className="text-sm md:text-lg font-beVietnam font-light text-gray-600 max-w-2xl leading-relaxed text-center mx-auto mb-6 px-4"
+            variants={headerItemVariants}
+            onAnimationComplete={() => setHeaderAnimationComplete(true)}
+          >
             We don't just "help" — we handle it. You'll never need to worry about
             posting again. Your Google reviews? Managed. Your website? Built to
             bring in orders. Your brand? Active, polished, and visible — every
             single week.
-          </p>
-        </div>  
+          </motion.p>
+        </motion.div>
 
         {/* Services container with stagger */}
         <motion.div
@@ -132,18 +169,15 @@ export default function WhyChooseUsSection() {
                   className={`absolute inset-y-0 left-0 rounded-full bg-gradient-to-r ${baseGradients[i]} z-10 md:w-[calc(100%-80px)] w-[calc(100%-60px)]`}
                   aria-hidden="true"
                 />
-
                 {/* Pattern area on right with transparent background and gray diagonal stripes */}
                 <div
                   className={`${service.patternWidth} absolute inset-y-0 right-0 rounded-r-full border-r border-b border-t border-gray-300 z-0`}
                   style={{
-                    // right: "22px",
                     background:
                       "repeating-linear-gradient(45deg, rgba(128,128,128,0.15) 0 2px, transparent 2px 8px)",
                   }}
                   aria-hidden="true"
                 />
-
                 {/* Icon circle */}
                 <motion.div
                   variants={innerItemVariants}
@@ -153,7 +187,6 @@ export default function WhyChooseUsSection() {
                 >
                   <Icon size={24} className="text-black md:w-7 md:h-7" />
                 </motion.div>
-
                 {/* Text with subtle pattern behind */}
                 <motion.span
                   variants={innerItemVariants}
@@ -176,9 +209,9 @@ export default function WhyChooseUsSection() {
             <p className="text-2xl md:text-4xl font-apfel font-semibold text-black mb-4 relative z-10">
               Ready to focus on what you do best?
             </p>
-            <p className="text-base md:text-lg text-gray-700 relative z-10 max-w-xl mx-auto px-4">
+            <p className="text-lg md:text-2xl font-beVietnam font-medium text-gray-700 mb-2 max-w-3xl text-center mx-auto">
               Let us handle your digital presence while you create amazing food
-              experiences.{" "}
+              experiences.{' '}
               <span className="bg-gradient-to-r from-primary-blue to-brand-yellow bg-clip-text text-transparent font-semibold">
                 Your customers will find you, trust you, and choose you.
               </span>
