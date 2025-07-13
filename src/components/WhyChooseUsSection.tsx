@@ -8,22 +8,22 @@ const services = [
   {
     icon: Smartphone,
     description: "Weekly posting to Facebook + Instagram",
-    patternWidth: "w-56", 
+    patternWidth: "w-56 md:w-56", 
   },
   {
     icon: Star,
     description: "Google review responses & reputation management",
-    patternWidth: "w-32",
+    patternWidth: "w-32 md:w-32",
   },
   {
     icon: Monitor,
     description: "Website built to convert (bookings, reservations, orders)",
-    patternWidth: "w-32",
+    patternWidth: "w-32 md:w-32",
   },
   {
     icon: Bot,
     description: "AI tools that power speed, humans who power results",
-    patternWidth: "w-40", // smallest pattern
+    patternWidth: "w-40 md:w-40", // smallest pattern
   },
 ];
 
@@ -35,8 +35,8 @@ const baseGradients = [
   "from-brand-yellow to-primary-blue",       // 4th
 ];
 
-// Horizontal offsets for staggered overlapping layout
-const horizontalOffsets = ["ml-0", "ml-40", "ml-14", "ml-56"];
+// Horizontal offsets for staggered overlapping layout - responsive
+const horizontalOffsets = ["ml-0", "ml-0 md:ml-40", "ml-0 md:ml-14", "ml-0 md:ml-56"];
 
 // Animation variants for fade + slide up with stagger
 const containerVariants = {
@@ -77,34 +77,34 @@ export default function WhyChooseUsSection() {
   return (
     <section
       ref={ref}
-      className="relative py-20 bg-white overflow-hidden"
+      className="relative py-12 md:py-20 bg-white overflow-hidden"
       aria-label="Why Choose Us"
     >
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <Utensils className="absolute top-10 left-10 w-8 h-8 text-primary-blue/20 animate-float" style={{ animationDelay: '0s' }} />
-        <ChefHat className="absolute top-40 right-32 w-10 h-10 text-brand-yellow/25 animate-bounce-gentle" style={{ animationDelay: '1s' }} />
-        <Smartphone className="absolute bottom-32 right-20 w-6 h-6 text-primary-blue/20 animate-float" style={{ animationDelay: '2s' }} />
-        <ChefHat className="absolute top-1/2 left-32 w-10 h-10 text-brand-yellow/25 animate-bounce-gentle" style={{ animationDelay: '1s' }} />
-        <Utensils className="absolute bottom-10 left-10 w-8 h-8 text-primary-blue/20 animate-float" style={{ animationDelay: '0.5s' }} />
-        <Star className="absolute top-1/3 left-1/4 w-4 h-4 text-brand-yellow/20 animate-pulse" />
-        <Utensils className="absolute bottom-1/4 left-1/3 w-8 h-8 text-primary-blue/20 animate-float" style={{ animationDelay: '1s' }} />
-        <Star className="absolute bottom-1/4 right-1/3 w-3 h-3 text-primary-blue/25 animate-pulse" style={{ animationDelay: '1.5s' }} />
+        <Utensils className="absolute top-10 left-10 w-6 h-6 md:w-8 md:h-8 text-primary-blue/20 animate-float" style={{ animationDelay: '0s' }} />
+        <ChefHat className="absolute top-40 right-8 md:right-32 w-8 h-8 md:w-10 md:h-10 text-brand-yellow/25 animate-bounce-gentle" style={{ animationDelay: '1s' }} />
+        <Smartphone className="absolute bottom-32 right-8 md:right-20 w-5 h-5 md:w-6 md:h-6 text-primary-blue/20 animate-float" style={{ animationDelay: '2s' }} />
+        <ChefHat className="absolute top-1/2 left-8 md:left-32 w-8 h-8 md:w-10 md:h-10 text-brand-yellow/25 animate-bounce-gentle" style={{ animationDelay: '1s' }} />
+        <Utensils className="absolute bottom-10 left-10 w-6 h-6 md:w-8 md:h-8 text-primary-blue/20 animate-float" style={{ animationDelay: '0.5s' }} />
+        <Star className="absolute top-1/3 left-1/4 w-3 h-3 md:w-4 md:h-4 text-brand-yellow/20 animate-pulse" />
+        <Utensils className="absolute bottom-1/4 left-1/3 w-6 h-6 md:w-8 md:h-8 text-primary-blue/20 animate-float" style={{ animationDelay: '1s' }} />
+        <Star className="absolute bottom-1/4 right-1/3 w-2 h-2 md:w-3 md:h-3 text-primary-blue/25 animate-pulse" style={{ animationDelay: '1.5s' }} />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 max-w-5xl">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-5xl">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-6xl md:text-6xl font-apfel font-bold text-gray-900 mb-4 leading-tight">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-4xl md:text-6xl font-apfel font-bold text-gray-900 mb-4 leading-tight">
             What's in the Box? </h2>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 
+          <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-2 
           leading-tight bg-gradient-to-r from-primary-blue to-brand-yellow bg-clip-text text-transparent">
             We Handle the Online.{" "}
             <span>
               You Handle the Kitchen.
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
             We don't just "help" — we handle it. You'll never need to worry about
             posting again. Your Google reviews? Managed. Your website? Built to
             bring in orders. Your brand? Active, polished, and visible — every
@@ -117,7 +117,7 @@ export default function WhyChooseUsSection() {
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="flex flex-col gap-10"
+          className="flex flex-col gap-6 md:gap-10"
         >
           {services.map((service, i) => {
             const Icon = service.icon;
@@ -125,12 +125,11 @@ export default function WhyChooseUsSection() {
               <motion.div
                 key={i}
                 variants={itemVariants}
-                className={`relative flex items-center max-w-[720px] rounded-full px-8 py-5 overflow-hidden cursor-pointer ${horizontalOffsets[i]}`}
+                className={`relative flex items-center max-w-[720px] rounded-full px-4 md:px-8 py-4 md:py-5 overflow-hidden cursor-pointer ${horizontalOffsets[i]}`}
               >
                 {/* Gradient bar with full rounding */}
                 <div
-                  className={`absolute inset-y-0 left-0 rounded-full bg-gradient-to-r ${baseGradients[i]} z-10`}
-                  style={{ width: `calc(100% - 80px)` }}
+                  className={`absolute inset-y-0 left-0 rounded-full bg-gradient-to-r ${baseGradients[i]} z-10 md:w-[calc(100%-80px)] w-[calc(100%-60px)]`}
                   aria-hidden="true"
                 />
 
@@ -150,9 +149,9 @@ export default function WhyChooseUsSection() {
                   variants={innerItemVariants}
                   initial="hidden"
                   animate={controls}
-                  className="relative z-10 flex-shrink-0 w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-md mr-6"
+                  className="relative z-10 flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center shadow-md mr-4 md:mr-6"
                 >
-                  <Icon size={28} className="text-black" />
+                  <Icon size={24} className="text-black md:w-7 md:h-7" />
                 </motion.div>
 
                 {/* Text with subtle pattern behind */}
@@ -160,7 +159,7 @@ export default function WhyChooseUsSection() {
                   variants={innerItemVariants}
                   initial="hidden"
                   animate={controls}
-                  className="relative z-10 font-beVietnam text-white text-lg font-medium"
+                  className="relative z-10 font-beVietnam text-white text-base md:text-lg font-medium"
                 >
                   {service.description}
                 </motion.span>
@@ -170,14 +169,14 @@ export default function WhyChooseUsSection() {
         </motion.div>
 
         {/* Call to action box */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-primary-blue/10 to-brand-yellow/10 p-8 rounded-3xl max-w-4xl mx-auto border border-primary-blue/20 backdrop-blur-sm relative overflow-hidden shadow-lg">
+        <div className="mt-12 md:mt-16 text-center">
+          <div className="bg-gradient-to-r from-primary-blue/10 to-brand-yellow/10 p-6 md:p-8 rounded-3xl max-w-4xl mx-auto border border-primary-blue/20 backdrop-blur-sm relative overflow-hidden shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
-            <p className="text-4xl font-apfel font-semibold text-black mb-4 relative z-10">
+            <p className="text-2xl md:text-4xl font-apfel font-semibold text-black mb-4 relative z-10">
               Ready to focus on what you do best?
             </p>
-            <p className="text-lg text-gray-700 relative z-10 max-w-xl mx-auto">
+            <p className="text-base md:text-lg text-gray-700 relative z-10 max-w-xl mx-auto px-4">
               Let us handle your digital presence while you create amazing food
               experiences.{" "}
               <span className="bg-gradient-to-r from-primary-blue to-brand-yellow bg-clip-text text-transparent font-semibold">
