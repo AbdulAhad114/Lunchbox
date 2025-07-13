@@ -64,11 +64,11 @@ const HeroSection = () => {
             onClick={scrollToBooking}
             className="bg-gradient-to-r from-primary-blue to-brand-yellow 
             hover:from-primary-blue/90 hover:to-brand-yellow/90 text-white 
-            font-beVietnam font-bold text-xl px-5 py-7 rounded-full shadow-2xl hover:shadow-3xl 
+            font-beVietnam font-bold text-base sm:text-lg md:text-xl px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-7 lg:py-8 rounded-full shadow-2xl hover:shadow-3xl 
             transition-all duration-300 group border-0 hover:-translate-y-1"
           >
             Book a Free Call
-            <ArrowRight className="ml-3 group-hover:translate-x-1 transition-transform duration-300" size={24} />
+            <ArrowRight className="ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-300" size={20} />
           </Button>
         </div>
       </div>

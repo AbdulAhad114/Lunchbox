@@ -24,10 +24,10 @@ const FinalCTASection = () => {
         
         <Button 
           onClick={scrollToBooking}
-          className="bg-white hover:bg-gray-50 text-primary-blue font-bold text-xl px-12 py-8 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 group"
+          className="bg-white hover:bg-gray-50 text-primary-blue font-bold text-base sm:text-lg md:text-xl px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-7 lg:py-8 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 group"
         >
           Book My Free Call
-          <ArrowRight className="ml-3 group-hover:translate-x-1 transition-transform duration-300" size={24} />
+          <ArrowRight className="ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-300" size={20} />
         </Button>
       </div>
       
