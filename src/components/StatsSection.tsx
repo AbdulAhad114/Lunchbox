@@ -42,23 +42,23 @@ export default function StatsSection() {
       <div className="grid grid-cols-2 grid-rows-2 w-full h-full border-2 border-black rounded-xl bg-white bg-opacity-60 overflow-hidden">
         {/* Top Left */}
         <div className="flex flex-col justify-top items-start border-b-2 border-r-2 border-black p-8">
-          <div className="text-4xl font-bold">350+</div>
-          <div className="font-semibold text-lg">Partners</div>
+          <div className="text-2xl sm:text-4xl font-bold">350+</div>
+          <div className="font-semibold text-base sm:text-lg">Partners</div>
         </div>
         {/* Top Right */}
         <div className="flex flex-col justify-top items-end border-b-2 border-black p-8">
-          <div className="text-4xl font-bold">900,000+</div>
-          <div className="font-semibold text-lg">People impacted</div>
+          <div className="text-2xl sm:text-4xl font-bold">900,000+</div>
+          <div className="font-semibold text-base sm:text-lg">People impacted</div>
         </div>
         {/* Bottom Left */}
         <div className="flex flex-col justify-end items-start border-r-2 border-black p-8">
-          <div className="text-4xl font-bold">90%</div>
-          <div className="font-semibold text-lg">Partner Retention</div>
+          <div className="text-2xl sm:text-4xl font-bold">90%</div>
+          <div className="font-semibold text-base sm:text-lg">Partner Retention</div>
         </div>
         {/* Bottom Right */}
         <div className="flex flex-col justify-end items-end p-8">
-          <div className="text-4xl font-bold">19,000+</div>
-          <div className="font-semibold text-lg">Hours in the business</div>
+          <div className="text-2xl sm:text-4xl font-bold">19,000+</div>
+          <div className="font-semibold text-base sm:text-lg">Hours in the business</div>
         </div>
       </div>
 
