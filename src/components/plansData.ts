@@ -1,7 +1,7 @@
 import SmallImg from "@/assets/images/Small-box.png";
 import StarterImg from "@/assets/images/starter-kit.png";
 import medboxImg from "@/assets/images/Medium-box.png";
-import largeboxImg from "@/assets/images/Large-box.png";
+import largeboxImg from "@/assets/images/large-box.png";
 import GrowthImg from "@/assets/images/growth-special.png";
 import ProImg from "@/assets/images/full-spread.png";
 

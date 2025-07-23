@@ -1,18 +1,25 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import lunchboxWay from "@/assets/images/lunchbox-way.png";
 
-const RIPPLE_COUNT = 10;
-const BASE_RADIUS = 200;
-const RADIUS_STEP = 100;
-const ANIMATION_DURATION = 2;
 
 const ProcessSection = () => {
   return (
     <div>
+      <Navigation />
       {/* Text Content */}
-      <div className="absolute bottom-5 left-0 w-full text-center z-20 px-4 md:px-0">
+      <div
+        className="relative left-0 w-full text-center z-20 px-4 md:px-0 h-[100vh] flex flex-col justify-center items-center bg-cover bg-center"
+        style={{
+          backgroundColor: "#26439B",
+          backgroundImage: `url(${lunchboxWay})`,
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "right center",
+        }}
+      >
         {/* Added px-4 padding on small screens to prevent overflow */}
-        <div className="text-black font-poppins font-medium text-[1.8vw] tracking-wide">
+        <div className="text-brand-yellow font-medium text-[1.8vw] tracking-wide">
           THE LUNCHBOX WAY
         </div>
         <div
@@ -21,7 +28,7 @@ const ProcessSection = () => {
         >
           One Simple System. Built for Busy Restaurants.
         </div>
-        <p className="text-sm md:text-lg font-light text-gray-600 max-w-2xl leading-relaxed text-center mx-auto px-4">
+        <p className="text-sm md:text-lg font-light text-brand-yellow max-w-2xl leading-relaxed text-center mx-auto px-4">
           We’ve cut the fluff. You don’t need complexity — you need consistency. Here’s how we make your digital presence work for you:
         </p>
       </div>
