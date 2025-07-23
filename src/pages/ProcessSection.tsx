@@ -7,82 +7,24 @@ const RADIUS_STEP = 100;
 const ANIMATION_DURATION = 2;
 
 const ProcessSection = () => {
-  const ripples = Array.from({ length: RIPPLE_COUNT });
-
   return (
-    <div
-      className="scroll bg-white scroll-smooth overflow-x-hidden" // prevent horizontal scroll globally
-      id="the-lunchbox-way"
-    >
-      {/* Navigation */}
-      <Navigation />
-
-      <div className="relative w-full h-screen bg-white overflow-hidden flex items-end justify-center">
-        {/* SVG Ripple Animation */}
-        <svg
-          width="100%" // use 100% instead of 100vw
-          height="100%" // use 100% instead of 100vh
-          viewBox="0 0 1920 1080"
-          className="absolute left-0 top-0 z-0 pointer-events-none"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          <g>
-            {ripples.map((_, i) => (
-              <circle
-                key={i}
-                cx={960}
-                cy={1080}
-                r={BASE_RADIUS + i * RADIUS_STEP}
-                stroke="#000"
-                strokeWidth="1.5"
-                fill="none"
-                style={{
-                  opacity: 0.18,
-                  transformOrigin: "960px 1080px",
-                  animation: `rippleAnim ${ANIMATION_DURATION}s linear infinite`,
-                  animationDelay: `${(ANIMATION_DURATION / RIPPLE_COUNT) * i}s`,
-                }}
-              />
-            ))}
-          </g>
-          <style>
-            {`
-              @keyframes rippleAnim {
-                0% {
-                  opacity: 0.22;
-                  transform: scale(0.85);
-                }
-                70% {
-                  opacity: 0.80;
-                }
-                100% {
-                  opacity: 0;
-                  transform: scale(1.18);
-                }
-              }
-            `}
-          </style>
-        </svg>
-
-        {/* Text Content */}
-        <div className="absolute bottom-5 left-0 w-full text-center z-20 px-4 md:px-0">
-          {/* Added px-4 padding on small screens to prevent overflow */}
-          <div className="text-black font-poppins font-medium text-[1.8vw] tracking-wide">
-            THE LUNCHBOX WAY
-          </div>
-          <div
-            className="font-fredoka text-black font-extrabold text-[3vw] tracking-wider uppercase inline-block px-2 py-1 rounded"
-            style={{ display: "inline-block" }}
-          >
-            One Simple System. Built for Busy Restaurants.
-          </div>
-
-          <p className="text-sm md:text-lg font-light text-gray-600 max-w-2xl leading-relaxed text-center mx-auto px-4">
-            We’ve cut the fluff. You don’t need complexity — you need consistency. Here’s how we make your digital presence work for you:
-          </p>
+    <div>
+      {/* Text Content */}
+      <div className="absolute bottom-5 left-0 w-full text-center z-20 px-4 md:px-0">
+        {/* Added px-4 padding on small screens to prevent overflow */}
+        <div className="text-black font-poppins font-medium text-[1.8vw] tracking-wide">
+          THE LUNCHBOX WAY
         </div>
+        <div
+          className="font-fredoka text-black font-extrabold text-[3vw] tracking-wider uppercase inline-block px-2 py-1 rounded"
+          style={{ display: "inline-block" }}
+        >
+          One Simple System. Built for Busy Restaurants.
+        </div>
+        <p className="text-sm md:text-lg font-light text-gray-600 max-w-2xl leading-relaxed text-center mx-auto px-4">
+          We’ve cut the fluff. You don’t need complexity — you need consistency. Here’s how we make your digital presence work for you:
+        </p>
       </div>
-
       <div className="border-t border-zinc-700 bg-white">
         {/* Desktop & Tablet */}
         <div className="hidden md:flex w-full justify-between md:px-6 lg:px-20 items-start max-w-[1280px] mx-auto">
@@ -101,7 +43,6 @@ const ProcessSection = () => {
               We Report
             </h2>
           </div>
-
           {/* Right column: Paragraphs */}
           <div className="w-full max-w-[50%]">
             <div className="flex flex-col md:pt-20 lg:pt-32 md:gap-20 lg:gap-32 border-l border-zinc-700 md:pl-6 lg:pl-20">
@@ -120,7 +61,6 @@ const ProcessSection = () => {
             </div>
           </div>
         </div>
-
         {/* Mobile */}
         <div className="md:hidden flex flex-col w-full pt-12 items-center mx-auto gap-12 px-8 font-fredoka max-w-[400px]">
           <div className="flex flex-col gap-4 animate-in fade-in zoom-in max-w-[324px] duration-300 w-full">
@@ -157,7 +97,6 @@ const ProcessSection = () => {
           </div>
         </div>
       </div>
-
       {/* Footer */}
       <Footer />
     </div>

@@ -1,83 +1,66 @@
+import { useState } from "react";
+import { plans } from "@/components/plansData";
+import ProductWithKeyPoints from "@/components/ProductWithKeyPoints";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-
-import { Card, CardContent } from "@/components/ui/card";
-import { Instagram, MessageSquare, Star, TrendingUp } from "lucide-react";
 import SplashCursor from "@/components/SplashCursor";
 
-const PricingAndValue = () => {
-  const services = [
-    {
-      icon: Instagram,
-      title: "Weekly Social Media",
-      description: "Fresh content & consistent posting that keeps your restaurant top-of-mind"
-    },
-    {
-      icon: Star,
-      title: "Google Review Management",
-      description: "We monitor, respond, and help you build that 5-star reputation"
-    },
-    {
-      icon: TrendingUp,
-      title: "AI-Assisted Strategy",
-      description: "Smart insights, human touch — the perfect recipe for growth"
-    }
-  ];
+export default function PricingAbdValue() {
+  const [selectedPlan, setSelectedPlan] = useState(null);
 
   return (
-    <section className="bg-white" id="services">
-        <Navigation />
-        <SplashCursor />
-      <div className="pt-44 pb-12 container mx-auto px-6">
-        <div className="text-center mb-16">
+    <div className="container mx-auto py-12">
+      <Navigation />
+      {/* <SplashCursor /> */}
+      <div className="text-center mt-36">
           <h2 className="text-4xl md:text-6xl font-apfel font-bold text-black mb-6">
             Everything You Need. One Price. No BS.
           </h2>
           
-          <div className="bg-gradient-to-r from-primary-blue to-brand-yellow p-8 rounded-3xl shadow-xl inline-block mb-8">
+          <div className="bg-gradient-to-r from-primary-blue to-brand-yellow p-8 rounded-3xl shadow-xl inline-block mb-6">
+            <p className="text-xl md:text-2xl font-apfel font-bold text-primary-blue mb-2">
+            All the Flavour, One Flat Price
+            </p>
             <p className="text-4xl md:text-5xl font-apfel font-bold text-white">
               $499/month
             </p>
-            <p className="text-white text-lg mt-2">
-              for professional, consistent digital presence management
-            </p>
-            <p className="text-white/90 text-sm mt-1">
-              no fluff, no nonsense
+            <p className="text-white text-lg mt-4">
+              We keep your digital presence simmering, fresh posts, fruitful reviews,<br />
+              and polished content on a daily.
             </p>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {services.map((service, index) => (
-            <Card 
-              key={index} 
-              className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-brand-yellow/30 bg-white hover:-translate-y-2"
-            >
-              <CardContent className="p-8 text-center">
-                <div className="bg-gradient-to-br from-brand-yellow/20 to-primary-blue/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon size={36} className="text-primary-blue" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <p className="text-lg text-black max-w-2xl mx-auto">
-            While you're perfecting recipes, we're perfecting your online presence. 
-            <span className="text-primary-blue font-semibold"> Simple, effective, and designed just for restaurants.</span>
-          </p>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-10">
+        {plans.map((plan) => (
+          <div
+            key={plan.id}
+            className="cursor-pointer border rounded-lg p-4 text-center hover:shadow-lg transition"
+            onClick={() => setSelectedPlan(plan)}
+          >
+            <img src={plan.cardImg} alt={plan.name} className="mx-auto w-56 h-56 mb-2" />
+            <h2 className="text-lg font-semibold">{plan.name}</h2>
+          </div>
+        ))}
       </div>
-      <Footer />
-    </section>
-  );
-};
 
-export default PricingAndValue;
+      {/* Modal */}
+      {selectedPlan && (
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
+          <div className="relative bg-brand-yellow rounded-xl w-full max-w-3xl max-h-[90vh] overflow-hidden">
+            <button
+              onClick={() => setSelectedPlan(null)}
+              className="absolute top-3 right-4 text-2xl text-gray-800"
+            >
+              ×
+            </button>
+            <ProductWithKeyPoints
+              imageSrc={selectedPlan.image}
+              pointTexts={selectedPlan.keyPoints}
+              isInteractive={true}
+            />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

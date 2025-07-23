@@ -1,11 +1,13 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, Utensils, ChefHat, Smartphone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
-  const scrollToBooking = () => {
-    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+  const navigate = useNavigate();
+  const goToBooking = () => {
+    navigate('/lets-talk');
   };
   const { ref, isVisible } = useScrollAnimation();
   return (
@@ -22,19 +24,6 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-black bg-opacity-90"></div>
       </div>
       
-      {/* Enhanced background elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-brand-yellow/10 to-primary-blue/5 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-primary-blue/10 to-brand-yellow/5 rounded-full blur-3xl animate-bounce-gentle"></div>
-      
-      {/* Restaurant-themed background icons */}
-      {/* <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <Utensils className="absolute top-20 left-20 w-8 h-8 text-primary-blue/10 animate-float" style={{ animationDelay: '0s' }} />
-        <ChefHat className="absolute top-40 right-32 w-10 h-10 text-brand-yellow/15 animate-bounce-gentle" style={{ animationDelay: '1s' }} />
-        <Smartphone className="absolute bottom-32 right-20 w-6 h-6 text-primary-blue/10 animate-float" style={{ animationDelay: '2s' }} />
-        <Star className="absolute top-1/3 left-1/4 w-4 h-4 text-brand-yellow/20 animate-pulse" />
-        <Star className="absolute bottom-1/4 right-1/3 w-3 h-3 text-primary-blue/15 animate-pulse" style={{ animationDelay: '1.5s' }} />
-      </div> */}
-
       <div className="container mx-auto px-6 pt-10 text-center relative z-10">
         <div
           ref={ref}
@@ -61,7 +50,7 @@ const HeroSection = () => {
           </p>
 
           <Button 
-            onClick={scrollToBooking}
+            onClick={goToBooking}
             className="bg-gradient-to-r from-primary-blue to-brand-yellow 
             hover:from-primary-blue/90 hover:to-brand-yellow/90 text-white 
             font-beVietnam font-bold text-base sm:text-lg md:text-xl px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-7 lg:py-8 rounded-full shadow-2xl hover:shadow-3xl 

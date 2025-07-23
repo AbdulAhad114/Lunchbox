@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
-import logo from "@/../public/images/lunchbox-logo.png"; // Adjust path as needed
+import logo from "@/../public/images/lunchbox-logo.png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,6 +22,7 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
+    { name: "New Home", href: "/new-home", type: "route" },
     { name: "THE LUNCHBOX WAY", href: "/the-lunchbox-way", type: "route" },
     { name: "PRICING & VALUE", href: "/pricing-and-value", type: "route" },
     { name: "LET'S TALK", href: "/lets-talk", type: "route" },
@@ -115,7 +116,7 @@ const Navigation = () => {
                       setIsMobileMenuOpen(false);
                     }
                   }}
-                  className="text-gray-700 hover:text-primary-blue font-poppins font-medium transition-colors duration-300"
+                  className="text-gray-700 hover:text-primary-blue font-medium transition-colors duration-300"
                 >
                   {item.name}
                 </button>

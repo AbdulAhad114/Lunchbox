@@ -2,10 +2,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useNavigate } from "react-router-dom";
 
 const FinalCTASection = () => {
-  const scrollToBooking = () => {
-    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+  const navigate = useNavigate();
+  const goToBooking = () => {
+    navigate('/lets-talk');
   };
   const { ref, isVisible } = useScrollAnimation();
   return (
@@ -23,7 +25,7 @@ const FinalCTASection = () => {
         </p>
         
         <Button 
-          onClick={scrollToBooking}
+          onClick={goToBooking}
           className="bg-white hover:bg-gray-50 text-primary-blue font-bold text-base sm:text-lg md:text-xl px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-7 lg:py-8 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 group"
         >
           Book My Free Call
