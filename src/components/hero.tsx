@@ -76,13 +76,14 @@ const Newhero = () => {
           <div className="px-2 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 max-w-full sm:max-w-2xl md:max-w-4xl w-full flex 
           flex-col items-center">
             <h1
-              className="font-apfel font-bold text-[3vw] sm:text-3xl md:text-[2vw] leading-tight tracking-wider uppercase inline-block px-1 sm:px-2 py-1 rounded text-primary-blue text-center mb-3"
+              className="font-apfel font-bold text-[3vw] sm:text-3xl md:text-[2vw] leading-tight tracking-wider uppercase 
+              inline-block px-1 sm:px-2 py-1 rounded text-primary-blue text-center mb-3"
               style={{ display: "inline-block" }}
             >
-              One Simple System. Built for Busy Restaurants.
+              FUELING RESTAURANT GROWTH, EVERY DAY
             </h1>
             <h2 className="text-4xl md:text-5xl font-apfel font-bold text-black mb-4 
-            leading-snug tracking-tight text-center">
+            leading-tight md:leading-snug tracking-tight text-center">
               More Online Presence → More Diners → More Reviews → More Growth
             </h2>
             <p className="text-[11px] sm:text-xs md:text-sm font-light text-primary-blue max-w-xs sm:max-w-lg md:max-w-2xl 

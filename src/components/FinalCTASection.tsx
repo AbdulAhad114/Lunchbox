@@ -20,7 +20,7 @@ const FinalCTASection = () => {
           Ready to Grow Your Restaurant Online?
         </h2>
         
-        <p className="text-lg md:text-2xl font-beVietnam font-medium text-white/90 mb-2 max-w-3xl text-center mx-auto">
+        <p className="text-lg md:text-2xl font-beVietnam font-medium text-white/90 mb-6 max-w-3xl text-center mx-auto">
           Join hundreds of successful restaurants who trust Lunchbox to handle their digital presence.
         </p>
         

@@ -7,8 +7,6 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ProcessSection from "./pages/ProcessSection";
 import BookingForm from "./components/BookingForm";
-import Hero from "./pages/hero";
-// import BookingForm from "./pages/contact";
 import PricingAndValue from "./pages/PricingAndValue";
 
 const queryClient = new QueryClient();
@@ -21,7 +19,6 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/new-home" element={<Hero />} />
           <Route path="/the-lunchbox-way" element={<ProcessSection />} />
           <Route path="/pricing-and-value" element={<PricingAndValue />} />
           <Route path="/lets-talk" element={<BookingForm />} />

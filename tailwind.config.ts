@@ -54,8 +54,8 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				// Updated Lunchbox Brand Colors
-				'primary-blue': '#0035AD',
-				'brand-yellow': '#FFFF00',
+				'primary-blue': '#0339A6',
+				'brand-yellow': '#F2E416',
 				'soft-bg': '#F5F5F5',
 				'dark-navy': '#02102F',
 				sidebar: {

@@ -1,51 +1,53 @@
 import React, { useRef, useState, useEffect } from "react";
-import defaultLogo from "@/../public/images/lunchbox-logo.png";
+import defaultLogo from "@/assets/images/Small-box.png";
 
 export const keyPointTemplate = [
   {
     id: 1,
-    heading: "Social Posts",
-    text: "Weekly Facebook posts, Weekly Instagram posts, No effort needed from you",
-    style: { top: "28%", left: "2%" },
+    heading: "Google Reputation Management",
+    text: "Turn negative reviews into brand wins, we monitor, respond, and improve your online image to build trust that leads to more bookings.",
+    style: { top: "20%", left: "2%" },
     arrowPos: { top: "20%", left: "33%", rotate: "-63deg" },
-    tabletStyle: { top: "11%", left: "-5%" },
+    tabletStyle: { top: "2%", left: "-5%" },
     tabletArrowPos: { top: "24%", left: "30%", rotate: "-44deg" },
-    mobileStyle: { top: "12%", left: "-12%" },
-    mobileArrowPos: { top: "28%", left: "22%", rotate: "140deg" },
+    mobileStyle: { top: "2%", left: "-12%" },
+    mobileArrowPos: { top: "29%", left: "38%", rotate: "150deg" },
   },
   {
     id: 2,
-    heading: "Reputation",
-    text: "Google review responses, Reputation management, Real-time alerts",
-    style: { top: "18%", right: "14%" },
-    arrowPos: { top: "22%", right: "33%", rotate: "20deg" },
+    heading: "Website Building & Growth",
+    subheading: "Turning clicks into customers",
+    text: "Drive real foot traffic and online orders with hyper-targeted ad compaigns, smart growth tactics and curated content.",
+    style: { top: "8%", right: "14%" },
+    arrowPos: { top: "40%", right: "33%", rotate: "20deg" },
     tabletStyle: { top: "20%", right: "3%" },
     tabletArrowPos: { top: "30%", right: "28%", rotate: "25deg" },
-    mobileStyle: { top: "17%", right: "2%" },
-    mobileArrowPos: { top: "34%", right: "23%", rotate: "-0deg" },
+    mobileStyle: { bottom: "1%", right: "0%" },
+    mobileArrowPos: { bottom: "24%", right: "34%", rotate: "56deg" }
+    // mobileArrowPos: { top: "34%", right: "23%", rotate: "-0deg" },
   },
   {
     id: 3,
-    heading: "Smart Website",
-    text: "Optimized for bookings, Mobile-friendly design, Custom integrations",
-    style: { bottom: "10%", left: "6%" },
+    heading: "FB & IG Posting",
+    text: "From drool-worthy visuals to witty captions, we make your food the star of every feed.",
+    style: { bottom: "10%", left: "2%" },
     arrowPos: { bottom: "16%", left: "33%", rotate: "110deg" },
-    tabletStyle: { bottom: "10%", left: "-5%" },
-    tabletArrowPos: { bottom: "22%", left: "28%", rotate: "105deg" },
+    tabletStyle: { bottom: "2%", left: "-5%" },
+    tabletArrowPos: { bottom: "24%", left: "28%", rotate: "105deg" },
     mobileStyle: { bottom: "9%", left: "-14%" },
-    mobileArrowPos: { bottom: "24%", left: "22%", rotate: "-90deg" },
+    mobileArrowPos: { bottom: "32%", left: "28%", rotate: "-88deg" },
   },
-  {
-    id: 4,
-    heading: "AI + Humans",
-    text: "AI-powered tools, Speed at scale, Results by real experts",
-    style: { bottom: "18%", right: "8%" },
-    arrowPos: { bottom: "10%", right: "34%", rotate: "22deg" },
-    tabletStyle: { bottom: "7%", right: "2%" },
-    tabletArrowPos: { bottom: "15%", right: "30%", rotate: "52deg" },
-    mobileStyle: { bottom: "9%", right: "0%" },
-    mobileArrowPos: { bottom: "18%", right: "24%", rotate: "56deg" },
-  },
+  // {
+  //   id: 4,
+  //   heading: "AI + Humans",
+  //   text: "AI-powered tools, Speed at scale, Results by real experts",
+  //   style: { bottom: "18%", right: "8%" },
+  //   arrowPos: { bottom: "10%", right: "34%", rotate: "22deg" },
+  //   tabletStyle: { bottom: "7%", right: "2%" },
+  //   tabletArrowPos: { bottom: "15%", right: "30%", rotate: "52deg" },
+  //   mobileStyle: { bottom: "9%", right: "0%" },
+  //   mobileArrowPos: { bottom: "18%", right: "24%", rotate: "56deg" },
+  // },
 ];
 
 export default function HomePagePoints(props) {
@@ -99,7 +101,7 @@ export default function HomePagePoints(props) {
   const getImageClasses = () => {
     switch (screenSize) {
       case "mobile":
-        return "w-[12rem] h-[12rem]";
+        return "w-[8rem] h-[8rem]";
       case "tablet":
         return "w-[16rem] h-[16rem]";
       default:
@@ -110,9 +112,9 @@ export default function HomePagePoints(props) {
   const getTextClasses = () => {
     switch (screenSize) {
       case "mobile":
-        return "text-xs max-w-[240px] p-2";
+        return "text-[0.85rem] max-w-[220px] p-1.5"; // smaller text and max width for mobile
       case "tablet":
-        return "text-sm max-w-[280px] p-2.5";
+        return "text-[0.95rem] max-w-[260px] p-2"; // reduced text size for tablet
       default:
         return "text-2sm max-w-[400px] font-bold";
     }
@@ -147,8 +149,9 @@ export default function HomePagePoints(props) {
             className={`absolute pl-14 z-20 font-beVietnamPro text-primary-blue font-semibold text-right ${getTextClasses()}`}
             style={pointStyle}
           >
-            {/* <div className="font-bold mb-1 text-3xl">{point.heading}</div> */}
-            <div className="text-black">
+            <div className="font-bold mb-1 text-base md:text-2xl">{point.heading}</div>
+            <div className="font-bold mb-1 text-xs md:text-lg">{point.subheading}</div>
+            <div className="text-black text-xs md:text-base">
               {point.text}
             </div>
           </div>

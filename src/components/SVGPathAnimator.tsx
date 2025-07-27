@@ -17,9 +17,8 @@ export default function SVGPathAnimator() {
       const rect = container.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Begin animation when top of container enters the viewport
-      const startOffset = windowHeight * 0.4;
-      const endOffset = windowHeight * 1.2;
+      const startOffset = windowHeight * 0.3;
+      const endOffset = rect.height; // make it responsive to container height
 
       const distanceScrolled = windowHeight - rect.top;
 
@@ -29,26 +28,31 @@ export default function SVGPathAnimator() {
     };
 
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   return (
-    <div ref={containerRef} className="absolute top-0 left-0 w-full h-full pointer-events-none z-10">
+    <div
+      ref={containerRef}
+      className="absolute top-0 left-0 w-full h-full pointer-events-none z-10"
+    >
       <svg
-        width="1000"
-        height="518"
-        viewBox="0 0 1000 518"
-        fill="none"
+        viewBox="0 0 996 490"
+        preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-auto"
+        className="w-full h-full"
       >
         <path
           ref={pathRef}
-          d="M-30 0C-30 0 22.5428 145.445 172 200.267C321.457 255.088 508 256.118 616 210.352C820 123.906 926 263.661 968 210.352C1010 157.044 1004 10.0854 954 105.176C904 200.267 805.511 16.3435 830 191.59C854.489 366.837 450 510 356 510C262 510 246.242 446.523 284 410.619C473.88 230.062 1218 453.842 1218 453.842"
-          stroke="#26439B"
-          strokeWidth="16"
+          d="M-7.99995 2C112 2 114 167.638 226 210.447C338 253.256 440.151 118.581 510 87.3888C746 -18 904.538 212.781 956.5 164.94C1008.46 117.099 1002.85 -17.1722 939.179 70.5511C875.514 158.274 852 178 908 210.447C964 242.895 214.769 486 98.4745 486C-17.8204 486 -54.7135 388.222 -8 356"
+          stroke="#0339A6"
+          strokeWidth="4"
           fill="none"
         />
       </svg>

@@ -13,13 +13,10 @@ export default function PricingAbdValue() {
       {/* <SplashCursor /> */}
       <div className="text-center mt-36">
           <h2 className="text-4xl md:text-6xl font-apfel font-bold text-black mb-6">
-            Everything You Need. One Price. No BS.
+            All the Flavour, One Flat Price
           </h2>
           
           <div className="bg-gradient-to-r from-primary-blue to-brand-yellow p-8 rounded-3xl shadow-xl inline-block mb-6">
-            <p className="text-xl md:text-2xl font-apfel font-bold text-primary-blue mb-2">
-            All the Flavour, One Flat Price
-            </p>
             <p className="text-4xl md:text-5xl font-apfel font-bold text-white">
               $499/month
             </p>

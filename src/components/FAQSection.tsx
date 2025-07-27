@@ -1,13 +1,15 @@
 "use client"
 
+import { useState } from "react"
 import {
-    Accordion,
-    AccordionItem,
-    AccordionTrigger,
-    AccordionContent,
-  } from "@/components/ui/accordion"
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion"
 import { motion } from "framer-motion"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import clsx from "clsx"
 
 const faqs = [
   {
@@ -58,56 +60,75 @@ const faqs = [
     answer:
       "We create custom, high-quality content tailored to your restaurant. We’ll use the raw photos, videos, and details you provide and turn them into scroll-stopping, polished posts—no random stock images unless absolutely necessary.",
   },
-]
+];
 
 export default function FAQSection() {
-    const { ref, isVisible } = useScrollAnimation();
+  const { ref, isVisible } = useScrollAnimation();
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-    // Animation variants for staggered FAQ items
-    const containerVariants = {
-      hidden: {},
-      show: {
-        transition: {
-          staggerChildren: 0.12,
-        },
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.12,
       },
-    };
-    const itemVariants = {
-      hidden: { opacity: 0, y: 30 },
-      show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-    };
+    },
+  };
 
-    return (
-      <motion.section
-        ref={ref}
-        initial={{ opacity: 0, y: 40 }}
-        animate={isVisible ? { opacity: 1, y: 0, transition: { duration: 0.6 } } : { opacity: 0, y: 40, transition: { duration: 0.6 } }}
-        className="max-w-5xl mx-auto px-4 pb-20"
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  return (
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isVisible ? { opacity: 1, y: 0, transition: { duration: 0.6 } } : { opacity: 0, y: 40, transition: { duration: 0.6 } }}
+      className="max-w-5xl mx-auto px-4 pb-20"
+    >
+      <h2 className="text-3xl md:text-4xl font-apfel font-bold text-center mb-12">
+        Frequently Asked Questions
+      </h2>
+
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate={isVisible ? "show" : "hidden"}
       >
-        <h2 className="text-3xl md:text-4xl font-apfel font-bold text-center mb-12">
-          Frequently Asked Questions
-        </h2>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isVisible ? "show" : "hidden"}
+        <Accordion
+          type="single"
+          collapsible
+          className="space-y-2"
+          onValueChange={(value) => {
+            const index = parseInt(value.split("-")[1]);
+            setActiveIndex(index === activeIndex ? null : index);
+          }}
         >
-          <Accordion type="single" collapsible className="space-y-2">
-            {faqs.map((faq, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <AccordionItem value={`item-${index}`}>
-                  <AccordionTrigger className="font-bold hover:no-underline hover:bg-primary-blue rounded px-4">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              </motion.div>
-            ))}
-          </Accordion>
-        </motion.div>
-      </motion.section>
-    )
-  }
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+            >
+              <AccordionItem value={`item-${index}`}>
+                <AccordionTrigger
+                  className={clsx(
+                    "font-bold px-4 rounded hover:no-underline text-start",
+                    activeIndex === index
+                      ? "bg-primary-blue text-white"
+                      : "hover:bg-primary-blue hover:text-white transition-colors duration-300"
+                  )}
+                >
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="px-6">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            </motion.div>
+          ))}
+        </Accordion>
+      </motion.div>
+    </motion.section>
+  );
+}
