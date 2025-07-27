@@ -9,7 +9,7 @@ const ProcessSection = () => {
   return (
     <div>
       <Navigation />
-      <div className="mt-12"></div>
+      <div className="mt-12 hidden sm:block"></div>
       <DominoAnimation /> 
       <LunchboxWay />
       <Footer />

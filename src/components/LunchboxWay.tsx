@@ -6,7 +6,7 @@ export default function LunchboxWay() {
       {/* Split background container */}
       <div className="absolute inset-0">
         <div className="flex h-full flex-col md:flex-row">
-          <div className="h-[30%] bg-white md:h-full md:w-[38%]" />
+          <div className="h-[30%] bg-brand-yellow md:h-full md:w-[38%]" />
           <div className="relative h-[70%] bg-primary-blue md:h-full md:w-[62%]">
             {/* Containers arranged in ) shape */}
             <div className="absolute left-[20%] h-full flex items-center">
