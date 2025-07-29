@@ -20,7 +20,7 @@ export const keyPointTemplate = [
     heading: "",
     text: "",
     style: { top: "12%", right: "-10%" },
-    arrowPos: { top: "22%", right: "12%", rotate: "20deg" },
+    arrowPos: { top: "32%", right: "12%", rotate: "20deg" },
     tabletStyle: { top: "20%", right: "-22%" },
     tabletArrowPos: { top: "24%", right: "17%", rotate: "-85deg" },
     mobileStyle: { top: "18%", right: "5%" },

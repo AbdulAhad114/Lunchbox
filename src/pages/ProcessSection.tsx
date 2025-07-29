@@ -11,7 +11,7 @@ const ProcessSection = () => {
       <Navigation />
       <div className="mt-12 hidden sm:block"></div>
       <DominoAnimation /> 
-      <LunchboxWay />
+      {/* <LunchboxWay /> */}
       <Footer />
     </div>
   );

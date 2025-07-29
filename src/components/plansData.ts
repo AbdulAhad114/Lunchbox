@@ -8,19 +8,19 @@ import ProImg from "@/assets/images/full-spread.png";
 export const plans = [
   {
     id: "starter",
-    name: "Small Box as Starter",
+    name: "Starter",
     cardImg: SmallImg,
     image: StarterImg,
     keyPoints: [
-      { heading: "Visibility", text: "1 post/week + intro site" },
-      { heading: "Monitoring", text: "Basic reviews + alerts" },
-      { heading: "Automation", text: "Light AI workflows" },
-      { heading: "Automation", text: "Light AI workflows" },
+      { heading: "Google Reputation Management", text: "Turn negative reviews into brand wins, we monitor, respond, and improve your online image to build trust that leads to more bookings." },
+      { heading: "Website Building & GrowthMonitoring", text: "Drive real foot traffic and online orders with hyper-targeted ad compaigns, smart growth tactics and curated content." },
+      { heading: "FB & IG Posting", text: "From drool-worthy visuals to witty captions, we make your food the star of every feed." },
+      // { heading: "Automation", text: "Light AI workflows" },
     ],
   },
   {
     id: "growth",
-    name: "Medium Box as Growth Special",
+    name: "Growth Special",
     cardImg: medboxImg,
     image: GrowthImg,
     keyPoints: [
@@ -32,7 +32,7 @@ export const plans = [
   },
   {
     id: "pro",
-    name: "Large Box as Full Spread",
+    name: "Full Spread",
     cardImg: largeboxImg,
     image: ProImg,
     keyPoints: [
