@@ -3,6 +3,7 @@ import { plans } from "@/components/plansData";
 import ProductWithKeyPoints from "@/components/ProductWithKeyPoints";
 import Navigation from "@/components/Navigation";
 import SplashCursor from "@/components/SplashCursor";
+import Footer from "@/components/Footer";
 
 export default function PricingAbdValue() {
   const [selectedPlan, setSelectedPlan] = useState(null);
@@ -58,6 +59,7 @@ export default function PricingAbdValue() {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   );
 }
