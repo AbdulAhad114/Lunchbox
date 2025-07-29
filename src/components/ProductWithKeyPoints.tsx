@@ -12,8 +12,8 @@ export const keyPointTemplate = [
     arrowPos: { top: "20%", left: "27%", rotate: "-38deg" },
     tabletStyle: { top: "23%", left: "-25%" },
     tabletArrowPos: { top: "24%", left: "15%", rotate: "-47deg" },
-    mobileStyle: { top: "20%", left: "0%" },
-    mobileArrowPos: { top: "30%", left: "11%", rotate: "-115deg" },
+    mobileStyle: { top: "6%", left: "0%" },
+    mobileArrowPos: { top: "30%", left: "32%", rotate: "-25deg" },
   },
   {
     id: 2,
@@ -23,8 +23,8 @@ export const keyPointTemplate = [
     arrowPos: { top: "32%", right: "12%", rotate: "20deg" },
     tabletStyle: { top: "20%", right: "-22%" },
     tabletArrowPos: { top: "24%", right: "17%", rotate: "-85deg" },
-    mobileStyle: { top: "18%", right: "5%" },
-    mobileArrowPos: { top: "30%", right: "15%", rotate: "-20deg" },
+    mobileStyle: { top: "10%", right: "5%" },
+    mobileArrowPos: { top: "38%", right: "20%", rotate: "20deg" },
   },
   {
     id: 3,
@@ -34,8 +34,8 @@ export const keyPointTemplate = [
     arrowPos: { bottom: "16%", left: "10%", rotate: "110deg" },
     tabletStyle: { bottom: "15%", left: "-25%" },
     tabletArrowPos: { bottom: "18%", left: "15%", rotate: "35deg" },
-    mobileStyle: { bottom: "10%", left: "0%" },
-    mobileArrowPos: { bottom: "24%", left: "12%", rotate: "-98deg" },
+    mobileStyle: { bottom: "8%", left: "0%" },
+    mobileArrowPos: { bottom: "32%", left: "22%", rotate: "-98deg" },
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ export const keyPointTemplate = [
     tabletStyle: { bottom: "10%", right: "-22%" },
     tabletArrowPos: { bottom: "17%", right: "16%", rotate: "42deg" },
     mobileStyle: { bottom: "14%", right: "0%" },
-    mobileArrowPos: { bottom: "24%", right: "10%", rotate: "-25deg" },
+    mobileArrowPos: { bottom: "24%", right: "30%", rotate: "45deg" },
   },
 ];
 
@@ -118,7 +118,7 @@ export default function ProductWithKeyPoints({
   const getContainerClasses = () => {
     switch (screenSize) {
       case "mobile":
-        return "min-h-[600px] max-w-[380px] px-2";
+        return "min-h-[500px] max-w-[440px] px-2";
       case "tablet":
         return "min-h-[500px] max-w-[500px] px-4";
       default:
@@ -129,6 +129,7 @@ export default function ProductWithKeyPoints({
   const getImageClasses = () => {
     switch (screenSize) {
       case "mobile":
+        return "w-[12rem] h-[12rem]";
       case "tablet":
         return "w-[16rem] h-[16rem]";
       default:
@@ -172,7 +173,7 @@ export default function ProductWithKeyPoints({
         return (
           <div
             key={point.id}
-            className={`absolute pl-16 font-beVietnamPro font-semibold text-right ${getTextClasses()}`}
+            className={`absolute ${screenSize === "mobile" ? "pl-2" : screenSize === "tablet" ? "pl-8" : "pl-16"} font-beVietnamPro font-semibold text-right ${getTextClasses()}`}
             style={pointStyle}
           >
             <div className="font-bold mb-1">{point.heading}</div>

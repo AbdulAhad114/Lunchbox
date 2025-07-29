@@ -5,10 +5,10 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row w-full border-t border-zinc-700">
           {/* Left section: Find Us */}
           <div className="w-full flex flex-col gap-4 items-center lg:items-start py-7 lg:py-8 border-b lg:border-0 border-zinc-700">
-            <p className="text-black-400 text-center md:text-left font-light text-base lg:text-lg lg:pl-20">
+            <p className="text-black-400 text-center md:text-left font-light text-base lg:text-lg lg:pl-8">
               FIND US
             </p>
-            <div className="text-[14px] lg:pl-20 leading-none pr-2 font-light flex flex-wrap md:flex-nowrap md:max-w-[302px] items-end gap-3">
+            <div className="text-[14px] lg:pl-8 leading-none pr-2 font-light flex flex-wrap md:flex-nowrap md:max-w-[302px] items-end gap-3">
               {[
                 {
                   href: "https://www.linkedin.com/company/lunchboxdigital/about/?viewAsMember=true",
