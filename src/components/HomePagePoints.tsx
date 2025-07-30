@@ -90,44 +90,44 @@ export default function HomePagePoints(props) {
   const getContainerClasses = () => {
     switch (screenSize) {
       case "mobile":
-        return "min-h-[400px] px-2";
+        return "min-h-[350px] sm:min-h-[400px] px-2 py-4";
       case "tablet":
-        return "min-h-[500px] px-4";
+        return "min-h-[450px] md:min-h-[500px] px-4 py-6";
       default:
-        return "min-h-[500px] h-full";
+        return "min-h-[500px] lg:min-h-[600px] h-full py-8";
     }
   };
 
   const getImageClasses = () => {
     switch (screenSize) {
       case "mobile":
-        return "w-[8rem] h-[8rem]";
+        return "w-[6rem] h-[6rem] sm:w-[8rem] sm:h-[8rem]";
       case "tablet":
-        return "w-[16rem] h-[16rem]";
+        return "w-[12rem] h-[12rem] md:w-[16rem] md:h-[16rem]";
       default:
-        return "w-[20rem] h-[20rem]";
+        return "w-[16rem] h-[16rem] lg:w-[20rem] lg:h-[20rem] xl:w-[24rem] xl:h-[24rem]";
     }
   };
 
   const getTextClasses = () => {
     switch (screenSize) {
       case "mobile":
-        return "text-[0.85rem] max-w-[220px] p-1.5"; // smaller text and max width for mobile
+        return "text-xs sm:text-sm max-w-[180px] sm:max-w-[220px] p-1 sm:p-1.5";
       case "tablet":
-        return "text-[0.95rem] max-w-[260px] p-2"; // reduced text size for tablet
+        return "text-sm md:text-base max-w-[220px] md:max-w-[260px] p-1.5 md:p-2";
       default:
-        return "text-2sm max-w-[400px] font-bold";
+        return "text-base lg:text-lg max-w-[300px] lg:max-w-[400px] p-2 lg:p-3";
     }
   };
 
   const getArrowClasses = () => {
     switch (screenSize) {
       case "mobile":
-        return "w-8 h-12";
+        return "w-6 h-8 sm:w-8 sm:h-12";
       case "tablet":
-        return "w-12 h-16";
+        return "w-10 h-12 md:w-12 md:h-16";
       default:
-        return "w-20 h-24";
+        return "w-16 h-20 lg:w-20 lg:h-24";
     }
   };
 
@@ -146,12 +146,12 @@ export default function HomePagePoints(props) {
         return (
           <div
             key={point.id}
-            className={`absolute pl-14 z-20 font-beVietnamPro text-primary-blue font-semibold text-right ${getTextClasses()}`}
+            className={`absolute pl-8 sm:pl-12 md:pl-14 z-20 font-beVietnamPro text-primary-blue font-semibold text-right ${getTextClasses()}`}
             style={pointStyle}
           >
-            <div className="font-bold mb-1 text-base md:text-2xl">{point.heading}</div>
-            <div className="font-bold mb-1 text-xs md:text-lg">{point.subheading}</div>
-            <div className="text-black text-xs md:text-base">
+            <div className="font-bold mb-1 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">{point.heading}</div>
+            <div className="font-bold mb-1 text-xs sm:text-sm md:text-base lg:text-lg">{point.subheading}</div>
+            <div className="text-black text-xs sm:text-sm md:text-base">
               {point.text}
             </div>
           </div>

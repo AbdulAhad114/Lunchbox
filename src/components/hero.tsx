@@ -72,33 +72,33 @@ const Newhero = () => {
 
         {/* Text Content - Centered, Brand Yellow BG, Primary Blue Text */}
         <div className="absolute left-1/2 top-[60%] z-20 -translate-x-1/2 -translate-y-1/2 w-full flex flex-col 
-        items-center justify-center px-8 sm:px-16 md:px-0">
-          <div className="px-2 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 max-w-full sm:max-w-2xl md:max-w-4xl w-full flex 
+        items-center justify-center px-4 sm:px-8 md:px-16 lg:px-0">
+          <div className="px-2 py-4 sm:px-4 sm:py-6 md:px-6 md:py-8 lg:px-8 lg:py-10 max-w-full sm:max-w-2xl md:max-w-4xl w-full flex 
           flex-col items-center">
             <h1
-              className="font-apfel font-bold text-[3vw] sm:text-3xl md:text-[2vw] leading-tight tracking-wider uppercase 
-              inline-block px-1 sm:px-2 py-1 rounded text-primary-blue text-center mb-3"
+              className="font-apfel font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-tight tracking-wider uppercase 
+              inline-block px-1 sm:px-2 py-1 rounded text-primary-blue text-center mb-2 sm:mb-3"
               style={{ display: "inline-block" }}
             >
               FUELING RESTAURANT GROWTH, EVERY DAY
             </h1>
-            <h2 className="text-4xl md:text-5xl font-apfel font-bold text-black mb-4 
-            leading-tight md:leading-snug tracking-tight text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-apfel font-bold text-black mb-3 sm:mb-4 
+            leading-tight tracking-tight text-center px-2">
               More Online Presence → More Diners → More Reviews → More Growth
             </h2>
-            <p className="text-[11px] sm:text-xs md:text-sm font-light text-primary-blue max-w-xs sm:max-w-lg md:max-w-2xl 
-            leading-relaxed text-center mx-auto px-2 sm:px-4 mb-6">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-light text-primary-blue max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl 
+            leading-relaxed text-center mx-auto px-2 sm:px-4 mb-4 sm:mb-6">
               Lunchbox is your digital team. Real marketers. Smart AI tools. Weekly results. No stress on your end.
             </p>
             <Button 
               onClick={goToBooking}
               className="bg-gradient-to-r from-primary-blue to-brand-yellow 
               hover:from-primary-blue/90 hover:to-brand-yellow/90 text-white 
-              font-beVietnam font-bold text-base sm:text-lg md:text-xl px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-7 lg:py-8 rounded-full shadow-2xl hover:shadow-3xl 
-              transition-all duration-300 group border-0 hover:-translate-y-1"
+              font-beVietnam font-bold text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 lg:py-7 rounded-full shadow-2xl hover:shadow-3xl 
+              transition-all duration-300 group border-0 hover:-translate-y-1 focus:ring-2 focus:ring-offset-2 focus:ring-primary-blue"
               >
               Book a Free Call
-              <ArrowRight className="ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-300" size={20} />
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={16} />
             </Button>
           </div>
         </div>

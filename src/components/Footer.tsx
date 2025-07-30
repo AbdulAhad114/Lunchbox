@@ -1,14 +1,14 @@
 export default function Footer() {
   return (
-    <footer className="text-black">
+    <footer className="text-black bg-white">
       <div className="flex flex-col lg:justify-between w-full lg:items-center">
-        <div className="flex flex-col lg:flex-row w-full border-t border-zinc-700">
+        <div className="flex flex-col lg:flex-row w-full border-t border-zinc-300">
           {/* Left section: Find Us */}
-          <div className="w-full flex flex-col gap-4 items-center lg:items-start py-7 lg:py-8 border-b lg:border-0 border-zinc-700">
-            <p className="text-black-400 text-center md:text-left font-light text-base lg:text-lg lg:pl-8">
+          <div className="w-full flex flex-col gap-3 sm:gap-4 items-center lg:items-start py-4 sm:py-6 lg:py-7 border-b lg:border-0 border-zinc-300 px-4 sm:px-6">
+            <p className="text-gray-600 text-center lg:text-left font-light text-sm sm:text-base lg:text-lg lg:pl-8">
               FIND US
             </p>
-            <div className="text-[14px] lg:pl-8 leading-none pr-2 font-light flex flex-wrap md:flex-nowrap md:max-w-[302px] items-end gap-3">
+            <div className="text-xs sm:text-sm lg:pl-8 leading-none pr-2 font-light flex flex-wrap justify-center lg:justify-start lg:max-w-[302px] items-center gap-2 sm:gap-3">
               {[
                 {
                   href: "https://www.linkedin.com/company/lunchboxdigital/about/?viewAsMember=true",
@@ -25,14 +25,15 @@ export default function Footer() {
               ].map(({ href, label }) => (
                 <div
                   key={label}
-                  className="flex gap-1 md:gap-2 justify-center items-center text-xs md:text-sm leading-none"
+                  className="flex gap-1 sm:gap-2 justify-center items-center text-xs sm:text-sm leading-none"
                 >
                   <svg
-                    width="8"
-                    height="8"
+                    width="6"
+                    height="6"
                     viewBox="0 0 8 8"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    className="sm:w-2 sm:h-2"
                   >
                     <circle cx="4" cy="4" r="4" fill="black" />
                   </svg>
@@ -40,7 +41,7 @@ export default function Footer() {
                     href={href}
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:underline"
+                    className="hover:underline focus:outline-none focus:ring-2 focus:ring-primary-blue focus:ring-offset-2 rounded"
                   >
                     {label}
                   </a>
@@ -68,22 +69,22 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="w-full flex flex-col md:flex-row justify-between items-center border-t border-zinc-700 py-6 md:py-8 px-4 md:px-8">
-          <div className="flex flex-col md:flex-row items-center text-center md:text-left gap-4 md:gap-8 mb-4 md:mb-0">
+        <div className="w-full flex flex-col sm:flex-row justify-between items-center border-t border-zinc-300 py-4 sm:py-6 md:py-8 px-4 sm:px-6 md:px-8 gap-4 sm:gap-0">
+          <div className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-3 sm:gap-4 md:gap-8">
             <a
               href="/privacy-policy"
-              className="text-black-400 font-light text-sm md:text-base leading-[130%]"
+              className="text-gray-600 font-light text-xs sm:text-sm md:text-base leading-[130%] hover:text-primary-blue focus:outline-none focus:ring-2 focus:ring-primary-blue focus:ring-offset-2 rounded"
             >
               Privacy Policy
             </a>
             <a
               href="mailto:howdy@alphasquad.tech"
-              className="text-black-400 font-light text-sm md:text-base leading-[130%]"
+              className="text-gray-600 font-light text-xs sm:text-sm md:text-base leading-[130%] hover:text-primary-blue focus:outline-none focus:ring-2 focus:ring-primary-blue focus:ring-offset-2 rounded"
             >
-              Contact Us: <span className="text-black"></span>
+              Contact Us
             </a>
           </div>
-          <p className="text-black-400 pt-8 md:pt-0 font-light text-xs md:text-base leading-[130%] text-center md:text-right">
+          <p className="text-gray-600 font-light text-xs sm:text-sm md:text-base leading-[130%] text-center sm:text-right">
             © LUNCHBOX 2025 ALL RIGHTS RESERVED
           </p>
         </div>

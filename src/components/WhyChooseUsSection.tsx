@@ -118,18 +118,18 @@ export default function WhyChooseUsSection() {
         {/* Header */}
         <motion.div
           ref={headerRef}
-          className={`text-center mb-12 md:mb-16 transition-all duration-1000 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          className={`text-center mb-8 sm:mb-12 md:mb-16 transition-all duration-1000 px-4 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           variants={headerContainerVariants}
           initial="hidden"
           animate={headerVisible ? "visible" : "hidden"}
         >
           <motion.h2
-            className="text-4xl md:text-6xl font-apfel font-bold text-gray-900 mb-4 leading-snug tracking-tight"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-apfel font-bold text-gray-900 mb-3 sm:mb-4 leading-snug tracking-tight"
             variants={headerItemVariants}
           >
             What's in the Box? </motion.h2>
           <motion.h2
-            className="text-lg md:text-2xl font-bold text-gray-900 mb-2 leading-snug bg-gradient-to-r from-primary-blue to-brand-yellow bg-clip-text text-transparent"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 leading-snug bg-gradient-to-r from-primary-blue to-brand-yellow bg-clip-text text-transparent"
             variants={headerItemVariants}
           >
             We Handle the Online.{' '}
@@ -138,7 +138,7 @@ export default function WhyChooseUsSection() {
             </span>
           </motion.h2>
           <motion.p
-            className="text-sm md:text-lg font-beVietnam font-light text-gray-600 max-w-2xl leading-relaxed text-center mx-auto mb-6 px-4"
+            className="text-sm sm:text-base md:text-lg font-beVietnam font-light text-gray-600 max-w-2xl leading-relaxed text-center mx-auto mb-4 sm:mb-6"
             variants={headerItemVariants}
             onAnimationComplete={() => setHeaderAnimationComplete(true)}
           >
@@ -154,7 +154,7 @@ export default function WhyChooseUsSection() {
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="flex flex-col gap-6 md:gap-10"
+          className="flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-10"
         >
           {services.map((service, i) => {
             const Icon = service.icon;
@@ -162,11 +162,11 @@ export default function WhyChooseUsSection() {
               <motion.div
                 key={i}
                 variants={itemVariants}
-                className={`relative flex items-center max-w-[720px] rounded-full px-4 md:px-8 py-4 md:py-5 overflow-hidden cursor-pointer ${horizontalOffsets[i]}`}
+                className={`relative flex items-center max-w-[720px] rounded-full px-3 sm:px-4 md:px-6 lg:px-8 py-3 sm:py-4 md:py-5 overflow-hidden cursor-pointer ${horizontalOffsets[i]}`}
               >
                 {/* Gradient bar with full rounding */}
                 <div
-                  className={`absolute inset-y-0 left-0 rounded-full bg-gradient-to-r ${baseGradients[i]} z-10 md:w-[calc(100%-80px)] w-[calc(100%-60px)]`}
+                  className={`absolute inset-y-0 left-0 rounded-full bg-gradient-to-r ${baseGradients[i]} z-10 w-[calc(100%-40px)] sm:w-[calc(100%-60px)] md:w-[calc(100%-80px)]`}
                   aria-hidden="true"
                 />
                 {/* Pattern area on right with transparent background and gray diagonal stripes */}
@@ -183,16 +183,16 @@ export default function WhyChooseUsSection() {
                   variants={innerItemVariants}
                   initial="hidden"
                   animate={controls}
-                  className="relative z-10 flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center shadow-md mr-4 md:mr-6"
+                  className="relative z-10 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center shadow-md mr-3 sm:mr-4 md:mr-6"
                 >
-                  <Icon size={24} className="text-black md:w-7 md:h-7" />
+                  <Icon size={20} className="text-black sm:w-6 sm:h-6 md:w-7 md:h-7" />
                 </motion.div>
                 {/* Text with subtle pattern behind */}
                 <motion.span
                   variants={innerItemVariants}
                   initial="hidden"
                   animate={controls}
-                  className="relative z-10 font-beVietnam text-white text-base md:text-lg font-medium"
+                  className="relative z-10 font-beVietnam text-white text-sm sm:text-base md:text-lg font-medium"
                 >
                   {service.description}
                 </motion.span>
@@ -202,14 +202,14 @@ export default function WhyChooseUsSection() {
         </motion.div>
 
         {/* Call to action box */}
-        <div className="mt-12 md:mt-16 text-center">
-          <div className="bg-gradient-to-r from-primary-blue/10 to-brand-yellow/10 p-6 md:p-8 rounded-3xl max-w-4xl mx-auto border border-primary-blue/20 backdrop-blur-sm relative overflow-hidden shadow-lg">
+        <div className="mt-8 sm:mt-12 md:mt-16 text-center px-4">
+          <div className="bg-gradient-to-r from-primary-blue/10 to-brand-yellow/10 p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl max-w-4xl mx-auto border border-primary-blue/20 backdrop-blur-sm relative overflow-hidden shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
-            <p className="text-2xl md:text-4xl font-apfel font-semibold text-black mb-4 relative z-10">
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-apfel font-semibold text-black mb-3 sm:mb-4 relative z-10">
               Ready to focus on what you do best?
             </p>
-            <p className="text-lg md:text-2xl font-beVietnam font-medium text-gray-700 mb-2 max-w-3xl text-center mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-beVietnam font-medium text-gray-700 mb-2 max-w-3xl text-center mx-auto">
               Let us handle your digital presence while you create amazing food
               experiences.{' '}
               <span className="bg-gradient-to-r from-primary-blue to-brand-yellow bg-clip-text text-transparent font-semibold">

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { FocusTrap } from "@/components/ui/focus-trap";
 import logo from "@/../public/images/lunchbox-logo.png";
 
 const Navigation = () => {
@@ -186,31 +187,36 @@ const Navigation = () => {
 
           {/* Mobile Navigation Menu */}
           {isMobileMenuOpen && (
-            <div className="lunchbox-mobile-menu md:hidden mt-4 pb-4 border-t border-gray-200 bg-white shadow-lg absolute left-0 right-0 w-full rounded-b-lg z-50"
-              style={{
-                paddingLeft: 8,
-                paddingRight: 8,
-              }}
-            >
-              <div className="flex flex-col space-y-4 pt-4">
-                {navItems.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => {
-                      if (item.type === "scroll") {
-                        scrollToSection(item.href);
-                      } else if (item.type === "route") {
-                        navigate(item.href);
-                        setIsMobileMenuOpen(false);
-                      }
-                    }}
-                    className="text-gray-700 hover:text-primary-blue font-medium transition-colors duration-300 text-left"
-                  >
-                    {item.name}
-                  </button>
-                ))}
+            <FocusTrap active={isMobileMenuOpen}>
+              <div 
+                className="lunchbox-mobile-menu md:hidden mt-4 pb-4 border-t border-gray-200 bg-white shadow-lg absolute left-0 right-0 w-full rounded-b-lg z-50"
+                style={{
+                  paddingLeft: 8,
+                  paddingRight: 8,
+                }}
+                role="navigation"
+                aria-label="Mobile navigation menu"
+              >
+                <div className="flex flex-col space-y-4 pt-4">
+                  {navItems.map((item) => (
+                    <button
+                      key={item.name}
+                      onClick={() => {
+                        if (item.type === "scroll") {
+                          scrollToSection(item.href);
+                        } else if (item.type === "route") {
+                          navigate(item.href);
+                          setIsMobileMenuOpen(false);
+                        }
+                      }}
+                      className="text-gray-700 hover:text-primary-blue font-medium transition-colors duration-300 text-left focus:outline-none focus:ring-2 focus:ring-primary-blue focus:ring-offset-2 rounded px-2 py-1"
+                    >
+                      {item.name}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
+            </FocusTrap>
           )}
         </div>
       </nav>

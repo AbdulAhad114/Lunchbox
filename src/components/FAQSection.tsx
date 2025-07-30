@@ -85,7 +85,7 @@ export default function FAQSection() {
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
       animate={isVisible ? { opacity: 1, y: 0, transition: { duration: 0.6 } } : { opacity: 0, y: 40, transition: { duration: 0.6 } }}
-      className="max-w-5xl mx-auto px-4 pb-20"
+      className="max-w-5xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16 md:pb-20"
     >
       <h2 className="text-3xl md:text-4xl font-apfel font-bold text-center mb-12">
         Frequently Asked Questions
@@ -113,7 +113,7 @@ export default function FAQSection() {
               <AccordionItem value={`item-${index}`}>
                 <AccordionTrigger
                   className={clsx(
-                    "font-bold px-4 rounded hover:no-underline text-start",
+                    "font-bold px-3 sm:px-4 py-3 sm:py-4 rounded hover:no-underline text-start text-sm sm:text-base",
                     activeIndex === index
                       ? "bg-primary-blue text-white"
                       : "hover:bg-primary-blue hover:text-white transition-colors duration-300"
@@ -121,7 +121,7 @@ export default function FAQSection() {
                 >
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="px-6">
+                <AccordionContent className="px-4 sm:px-6 text-sm sm:text-base">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
