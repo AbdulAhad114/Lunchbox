@@ -132,7 +132,7 @@ export default function HomePagePoints(props) {
   };
 
   return (
-    <div ref={ref} id="home-page-points" className={`relative bg-brand-yellow w-full mx-auto ${getContainerClasses()}`}>
+    <div ref={ref} id="home-page-points" className={`relative w-full mx-auto ${getContainerClasses()}`}>
       
       <img
         src={imageSrc}

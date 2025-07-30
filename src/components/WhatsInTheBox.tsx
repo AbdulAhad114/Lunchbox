@@ -25,7 +25,7 @@ export default function WhatsInTheBox() {
   return (
     <div id="whats-in-the-box"
       ref={headerRef}
-      className={`text-center z-10 pt-20 mb-[-25px] md:mb-[-80px] z-10 bg-brand-yellow border-t border-primary-blue-500`}
+      className={`text-center z-10 pt-20 mb-[-25px] md:mb-[-80px] z-10 border-t border-primary-blue-500`}
     >
       <h2
         className={`text-4xl md:text-6xl font-apfel font-bold text-primary-blue mb-2 leading-snug tracking-tight transition-all duration-1000 ${

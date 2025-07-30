@@ -19,7 +19,7 @@ const Index = () => {
       <Navigation />
       <Newhero />
       {/* <HomePagePoints /> */}
-      <div className="relative z-0" id="svg-animation-wrapper">
+      <div className="relative z-0 bg-brand-yellow" id="svg-animation-wrapper">
         <SVGPathAnimator />
         <WhatsInTheBox /> 
         <HomePagePoints />
