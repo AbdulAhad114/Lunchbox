@@ -8,7 +8,7 @@ export default function Footer() {
             <p className="text-gray-600 text-center lg:text-left font-light text-sm sm:text-base lg:text-lg lg:pl-8">
               FIND US
             </p>
-            <div className="text-xs sm:text-sm lg:pl-8 leading-none pr-2 font-light flex flex-wrap justify-center lg:justify-start lg:max-w-[302px] items-center gap-2 sm:gap-3">
+            <div className="text-xs sm:text-sm lg:pl-8 leading-none pr-2 font-light flex flex-wrap justify-center lg:justify-start lg:max-w-[400px] items-center gap-2 sm:gap-3">
               {[
                 {
                   href: "https://www.linkedin.com/company/lunchboxdigital/about/?viewAsMember=true",
@@ -81,7 +81,7 @@ export default function Footer() {
               href="mailto:howdy@alphasquad.tech"
               className="text-gray-600 font-light text-xs sm:text-sm md:text-base leading-[130%] hover:text-primary-blue focus:outline-none focus:ring-2 focus:ring-primary-blue focus:ring-offset-2 rounded"
             >
-              Contact Us
+              Contact Us: howdy@alphasquad.tech
             </a>
           </div>
           <p className="text-gray-600 font-light text-xs sm:text-sm md:text-base leading-[130%] text-center sm:text-right">

@@ -18,7 +18,7 @@ export const keyPointTemplate = [
     heading: "Website Building & Growth",
     subheading: "Turning clicks into customers",
     text: "Drive real foot traffic and online orders with hyper-targeted ad compaigns, smart growth tactics and curated content.",
-    style: { top: "8%", right: "14%" },
+    style: { top: "8%", right: "10%" },
     arrowPos: { top: "40%", right: "33%", rotate: "20deg" },
     tabletStyle: { top: "20%", right: "3%" },
     tabletArrowPos: { top: "30%", right: "28%", rotate: "25deg" },

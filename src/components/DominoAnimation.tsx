@@ -4,6 +4,10 @@ import { AnimationPlaybackControls, animate, useScroll } from "framer-motion";
 
 const STACK_CONTAINERS = [
   {
+    heading: "Kickoff Call",
+    text: "We learn about your restaurant and show you how Lunchbox works.",
+  },
+  {
     heading: "Sign Up & Onboarding",
     text: "You sign up, we handle the rest.",
   },

@@ -11,7 +11,7 @@ export default function WhatsInTheBox() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setHeaderVisible(true);
-          observer.disconnect(); // run animation only once
+          observer.disconnect();
         }
       },
       { threshold: 0.2 }
