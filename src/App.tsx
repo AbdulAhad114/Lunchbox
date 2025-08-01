@@ -10,6 +10,7 @@ import ProcessSection from "./pages/ProcessSection";
 import BookingForm from "./components/BookingForm";
 import PricingAndValue from "./pages/PricingAndValue";
 import { useLenis } from "@/hooks/useLenis";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="/the-lunchbox-way" element={<ProcessSection />} />
             <Route path="/pricing-and-value" element={<PricingAndValue />} />
             <Route path="/lets-talk" element={<BookingForm />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
