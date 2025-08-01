@@ -78,11 +78,24 @@ function ProcessWay() {
 
   return (
     <>
-      {/* <section className="relative intro w-[100vw] h-[100vh] overflow-hidden"></section> */}
+      <section className="relative intro w-[100vw] h-[100vh] overflow-hidden">
+        <div className="text-center w-full px-4 pt-36 mt-12">
+          <h3 className="text-base md:text-lg font-semibold tracking-wider mb-2 text-brand-yellow ">
+            THE LUNCHBOX WAY
+          </h3>
+          <h2 className="text-4xl md:text-4xl lg:text-5xl font-apfel font-bold mb-4 leading-tight text-primary-blue">
+            One Simple System.<br />Built for Busy Restaurants.
+          </h2>
+          <p className="text-base md:text-lg lg:text-xl max-w-2xl mx-auto px-4 leading-relaxed mb-4 text-black">
+            We've cut the fluff. You don't need complexity, you need consistency.
+            Here's how we make your digital presence work for you:
+          </p>
+        </div>
+      </section>
       <section ref={stickyRef} className="relative steps w-[100vw] h-[100vh] overflow-hidden bg-brand-yellow">
         <div className="step-counter absolute flex flex-col m-8">
           <div className="counter-title absolute w-[1200px] h-[150px] overflow-hidden [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
-            <h1 className="w-full relative text-[#000] uppercase font-black font-apfel text-[150px] leading-[1] tracking-[-0.04em] will-change-transform">
+            <h1 className="w-full relative text-[#000] uppercase text-primary-blue font-apfel font-bold text-[150px] leading-[1] tracking-[-0.04em] will-change-transform">
               Steps
             </h1>
           </div>
@@ -98,7 +111,7 @@ function ProcessWay() {
           </div>
         </div>
 
-        <div className="cards absolute top-[27.5%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[600px] will-change-transform">
+        <div className="cards absolute top-[27.5%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[600px] will-change-transform">
           {STACK_CONTAINERS.map((step, index) => (
             <Card
               key={index}
@@ -117,7 +130,7 @@ function ProcessWay() {
                 origin-center
                 bg-white
                 shadow-lg
-                md:w-[375px] md:h-[500px]
+                md:w-[475px] md:h-[500px]
               "
             >
               <CardHeader className="p-4 pb-2">
@@ -128,6 +141,13 @@ function ProcessWay() {
               <CardContent className="pt-0 px-4">
                 <p className="text-base">{step.text}</p>
               </CardContent>
+              <span
+                className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[300px] font-apfel font-bold text-primary-blue pointer-events-none select-none z-0"
+              >
+                {"0" + (index + 1)}
+              </span>
+
+
             </Card>
           ))}
           {/* <div className="class-empty opacity-0"></div> */}

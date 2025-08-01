@@ -7,10 +7,10 @@ export const keyPointTemplate = [
     heading: "Google Reputation Management",
     text: "Turn negative reviews into brand wins, we monitor, respond, and improve your online image to build trust that leads to more bookings.",
     style: { top: "20%", left: "2%" },
-    arrowPos: { top: "20%", left: "33%", rotate: "-63deg" },
+    arrowPos: { top: "22%", left: "33%", rotate: "-63deg" },
     tabletStyle: { top: "2%", left: "-5%" },
     tabletArrowPos: { top: "24%", left: "30%", rotate: "-44deg" },
-    mobileStyle: { top: "2%", left: "-12%" },
+    mobileStyle: { top: "9%", left: "-7%" },
     mobileArrowPos: { top: "29%", left: "38%", rotate: "150deg" },
   },
   {
@@ -18,11 +18,11 @@ export const keyPointTemplate = [
     heading: "Website Building & Growth",
     subheading: "Turning clicks into customers",
     text: "Drive real foot traffic and online orders with hyper-targeted ad compaigns, smart growth tactics and curated content.",
-    style: { top: "8%", right: "10%" },
-    arrowPos: { top: "40%", right: "33%", rotate: "20deg" },
+    style: { top: "12%", right: "10%" },
+    arrowPos: { top: "40%", right: "30%", rotate: "20deg" },
     tabletStyle: { top: "20%", right: "3%" },
     tabletArrowPos: { top: "30%", right: "28%", rotate: "25deg" },
-    mobileStyle: { bottom: "1%", right: "0%" },
+    mobileStyle: { bottom: "2%", right: "4%" },
     mobileArrowPos: { bottom: "24%", right: "34%", rotate: "56deg" }
     // mobileArrowPos: { top: "34%", right: "23%", rotate: "-0deg" },
   },
@@ -31,10 +31,10 @@ export const keyPointTemplate = [
     heading: "FB & IG Posting",
     text: "From drool-worthy visuals to witty captions, we make your food the star of every feed.",
     style: { bottom: "10%", left: "2%" },
-    arrowPos: { bottom: "16%", left: "33%", rotate: "110deg" },
+    arrowPos: { bottom: "26%", left: "30%", rotate: "110deg" },
     tabletStyle: { bottom: "2%", left: "-5%" },
     tabletArrowPos: { bottom: "24%", left: "28%", rotate: "105deg" },
-    mobileStyle: { bottom: "9%", left: "-14%" },
+    mobileStyle: { bottom: "8%", left: "-7%" },
     mobileArrowPos: { bottom: "32%", left: "28%", rotate: "-88deg" },
   },
   // {
@@ -101,11 +101,11 @@ export default function HomePagePoints(props) {
   const getImageClasses = () => {
     switch (screenSize) {
       case "mobile":
-        return "w-[6rem] h-[6rem] sm:w-[8rem] sm:h-[8rem]";
+        return "w-[10rem] h-[10rem] sm:w-[10rem] sm:h-[10rem]";
       case "tablet":
         return "w-[12rem] h-[12rem] md:w-[16rem] md:h-[16rem]";
       default:
-        return "w-[16rem] h-[16rem] lg:w-[20rem] lg:h-[20rem] xl:w-[24rem] xl:h-[24rem]";
+        return "w-[16rem] h-[16rem] lg:w-[18rem] lg:h-[18rem] xl:w-[20rem] xl:h-[20rem]";
     }
   };
 
@@ -123,7 +123,7 @@ export default function HomePagePoints(props) {
   const getArrowClasses = () => {
     switch (screenSize) {
       case "mobile":
-        return "w-6 h-8 sm:w-8 sm:h-12";
+        return "w-8 h-10 sm:w-8 sm:h-12";
       case "tablet":
         return "w-10 h-12 md:w-12 md:h-16";
       default:

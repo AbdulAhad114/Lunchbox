@@ -25,10 +25,11 @@ export default function WhatsInTheBox() {
   return (
     <div id="whats-in-the-box"
       ref={headerRef}
-      className={`text-center z-10 pt-20 mb-[-25px] md:mb-[-80px] z-10 border-t border-primary-blue-500`}
+      className={`text-center z-10 pt-10 md:pt-20 mb-[-25px] md:mb-[-80px] z-10 border-t border-primary-blue-500`}
     >
       <h2
-        className={`text-4xl md:text-6xl font-apfel font-bold text-primary-blue mb-2 leading-snug tracking-tight transition-all duration-1000 ${
+        className={`text-5xl md:text-6xl font-apfel font-bold text-primary-blue mb-2 leading-snug tracking-tight 
+          transition-all duration-1000 ${
           headerVisible ? "opacity-100 translate-y-0 delay-100" : "opacity-0 translate-y-10"
         }`}
       >
@@ -36,7 +37,7 @@ export default function WhatsInTheBox() {
       </h2>
 
       <h2
-        className={`text-lg md:text-2xl font-bold text-gray-900 mb-2 leading-snug bg-gradient-to-r from-primary-blue to-brand-yellow bg-clip-text text-transparent transition-all duration-1000 px-4 md:px-0 ${
+        className={`text-lg md:text-2xl font-bold text-gray-900 mb-2 leading-snug bg-gradient-to-r from-primary-blue to-gray-900 bg-clip-text text-transparent transition-all duration-1000 px-4 md:px-0 ${
           headerVisible ? "opacity-100 translate-y-0 delay-300" : "opacity-0 translate-y-10"
         }`}
       >

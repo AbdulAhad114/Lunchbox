@@ -9,7 +9,7 @@ const ProcessSection = () => {
   return (
     <div>
       <Navigation />
-      <div className="pt-32 text-center w-full px-4 pb-32 mt-12 hidden sm:block">
+      {/* <div className="pt-32 text-center w-full px-4 pb-32 mt-12 hidden sm:block">
         <h3 className="text-sm md:text-lg font-semibold tracking-wider mb-2" style={{ color: '#F2E416' }}>
           THE LUNCHBOX WAY
         </h3>
@@ -20,8 +20,7 @@ const ProcessSection = () => {
           We've cut the fluff. You don't need complexity, you need consistency.
           Here's how we make your digital presence work for you:
         </p>
-      </div>
-      {/* <DominoAnimation />  */}
+      </div> */}
       <ProcessWay />
       <Footer />
     </div>
