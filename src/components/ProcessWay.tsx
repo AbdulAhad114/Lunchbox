@@ -130,11 +130,11 @@ function ProcessWay() {
                 origin-center
                 bg-white
                 shadow-lg
-                md:w-[475px] md:h-[500px]
+                md:w-[460px] md:h-[500px]
               "
             >
               <CardHeader className="p-4 pb-2">
-                <CardTitle className="font-apfel font-bold text-4xl md:text-[30px]">
+                <CardTitle className="font-apfel font-bold text-4xl md:text-[32px]">
                   {step.heading}
                 </CardTitle>
               </CardHeader>
@@ -142,7 +142,7 @@ function ProcessWay() {
                 <p className="text-base">{step.text}</p>
               </CardContent>
               <span
-                className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[300px] font-apfel font-bold text-primary-blue pointer-events-none select-none z-0"
+                className="absolute bottom-10 sm:bottom-1 left-1/2 -translate-x-1/2 text-[300px] font-apfel font-bold text-primary-blue pointer-events-none select-none z-0"
               >
                 {"0" + (index + 1)}
               </span>
